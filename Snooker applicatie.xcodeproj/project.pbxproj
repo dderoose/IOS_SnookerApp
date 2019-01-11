@@ -14,6 +14,7 @@
 		D4A8FE6421E8B58400DD1753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A8FE6221E8B58400DD1753 /* LaunchScreen.storyboard */; };
 		D4A8FE6F21E8B58400DD1753 /* Snooker_applicatieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FE6E21E8B58400DD1753 /* Snooker_applicatieTests.swift */; };
 		D4A8FE7A21E8B58400DD1753 /* Snooker_applicatieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FE7921E8B58400DD1753 /* Snooker_applicatieUITests.swift */; };
+		D4A8FEC221E8CAB900DD1753 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FEC121E8CAB900DD1753 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D4A8FE7521E8B58400DD1753 /* Snooker applicatieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snooker applicatieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A8FE7921E8B58400DD1753 /* Snooker_applicatieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snooker_applicatieUITests.swift; sourceTree = "<group>"; };
 		D4A8FE7B21E8B58400DD1753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4A8FEC121E8CAB900DD1753 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				D4A8FE6021E8B58400DD1753 /* Assets.xcassets */,
 				D4A8FE6221E8B58400DD1753 /* LaunchScreen.storyboard */,
 				D4A8FE6521E8B58400DD1753 /* Info.plist */,
+				D4A8FEC121E8CAB900DD1753 /* RegisterViewController.swift */,
 			);
 			path = "Snooker applicatie";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A8FEC221E8CAB900DD1753 /* RegisterViewController.swift in Sources */,
 				D4A8FE5C21E8B58300DD1753 /* ViewController.swift in Sources */,
 				D4A8FE5A21E8B58300DD1753 /* AppDelegate.swift in Sources */,
 			);

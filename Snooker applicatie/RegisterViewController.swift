@@ -1,28 +1,26 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  Snooker applicatie
 //
 //  Created by Dennis Deroose on 11/01/2019.
 //  Copyright © 2019 Dennis Deroose. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        btnInlog.backgroundColor = .clear
-        btnInlog.layer.borderColor = UIColor.lightGray.cgColor
-        btnInlog.layer.cornerRadius = 5
-        btnInlog.layer.borderWidth = 1
         btnRegister.backgroundColor = .clear
         btnRegister.layer.borderColor = UIColor.lightGray.cgColor
         btnRegister.layer.cornerRadius = 5
         btnRegister.layer.borderWidth = 1
+        txtEmail.keyboardType = UIKeyboardType.emailAddress
     }
-    @IBOutlet weak var btnInlog: UIButton!
+    
     @IBOutlet weak var btnRegister: UIButton!
+    @IBOutlet weak var txtEmail: UITextField!
 }
-
