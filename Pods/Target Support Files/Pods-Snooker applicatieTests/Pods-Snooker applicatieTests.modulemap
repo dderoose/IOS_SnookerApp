@@ -1,0 +1,6 @@
+framework module Pods_Snooker_applicatieTests {
+  umbrella header "Pods-Snooker applicatieTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

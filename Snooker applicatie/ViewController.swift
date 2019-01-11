@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -21,6 +22,32 @@ class ViewController: UIViewController {
         btnRegister.layer.borderColor = UIColor.lightGray.cgColor
         btnRegister.layer.cornerRadius = 5
         btnRegister.layer.borderWidth = 1
+        
+        let headers = [
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+        let parameters = [
+            "grant_type": "password",
+            "username": "Dennis",
+            "password": "Test1;"
+        ]
+        Alamofire.request("http://backendapplications.azurewebsites.net/token", method: .post,parameters: parameters, headers: headers).responseJSON { (response) -> Void in
+            
+            if let JSON = response.result.value{
+                print(JSON)
+            }
+        }
+        //api call
+        /*Alamofire.request("http://backendapplications.azurewebsites.net/api/Breaks")
+            .responseJSON{ (response) -> Void in
+                
+                if let JSON = response.result.value{
+                    print(JSON)
+                }
+        }*/
+        
+        
     }
     @IBOutlet weak var btnInlog: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
