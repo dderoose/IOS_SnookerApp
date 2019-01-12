@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Snooker_applicatie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Snooker_applicatie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +164,17 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="bkR-Yv-AXO"/>
+                                    <action selector="btnRegisterClicked:" destination="gSZ-3D-X2g" eventType="touchUpInside" id="9R3-Ge-sU4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-ca-B7c">
+                                <rect key="frame" x="132" y="613" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Terug">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="e18-Hs-ju8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -172,8 +182,12 @@
                         <viewLayoutGuide key="safeArea" id="jvF-qR-q8b"/>
                     </view>
                     <connections>
+                        <outlet property="btnBack" destination="g0x-ca-B7c" id="azR-va-5EP"/>
                         <outlet property="btnRegister" destination="BtY-pS-XGg" id="3hb-Ej-cL8"/>
-                        <outlet property="txtEmail" destination="LUz-ac-MJE" id="L4a-1n-2hO"/>
+                        <outlet property="txtEmail" destination="LUz-ac-MJE" id="sor-KG-qHF"/>
+                        <outlet property="txtPassword" destination="PNx-Nj-dLr" id="tcE-nl-KfW"/>
+                        <outlet property="txtPasswordConfirm" destination="wrE-u0-Nzz" id="JlS-vk-B30"/>
+                        <outlet property="txtUsername" destination="dbF-84-hIo" id="6QK-sf-km5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lz0-wM-WE0" userLabel="First Responder" sceneMemberID="firstResponder"/>

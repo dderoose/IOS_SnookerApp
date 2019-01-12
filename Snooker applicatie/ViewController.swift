@@ -52,11 +52,12 @@ class ViewController: UIViewController {
             
             if let statuscode = response.response?.statusCode{
                 if(statuscode == 400){
-                    let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+                    let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100, width: (self.view.frame.width - 10), height: 70))
+                    toastLabel.numberOfLines = 2
                     toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
                     toastLabel.textColor = UIColor.white
                     toastLabel.textAlignment = .center;
-                    toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+                    toastLabel.font = UIFont(name: "Montserrat-Light", size: 10.0)
                     toastLabel.text = "Er is een foute username of paswoord ingevuld"
                     toastLabel.alpha = 1.0
                     toastLabel.layer.cornerRadius = 10;
