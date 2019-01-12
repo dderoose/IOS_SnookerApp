@@ -76,8 +76,4 @@ let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100,
             }
         }
     }
-    
-    @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) {
-      
-    }
 }

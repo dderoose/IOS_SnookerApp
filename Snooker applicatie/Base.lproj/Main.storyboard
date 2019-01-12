@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="loginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Snooker_applicatie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUm-9s-RvN">
@@ -91,7 +91,7 @@
             <objects>
                 <viewController id="gSZ-3D-X2g" customClass="RegisterViewController" customModule="Snooker_applicatie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f5L-rR-Lze">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Registreren" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU2-Xm-HFi">
@@ -194,20 +194,113 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="834.33283358320841"/>
         </scene>
-        <!--View Controller-->
+        <!--Overview View Controller-->
         <scene sceneID="NpQ-aK-hhv">
             <objects>
-                <viewController storyboardIdentifier="overviewView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qqy-Jh-wjP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="overviewView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qqy-Jh-wjP" customClass="OverviewViewController" customModule="Snooker_applicatie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tng-VK-UI4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Znc-2Z-xoe">
+                                <rect key="frame" x="0.0" y="88" width="116" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-WE-jPk">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
+                                        <state key="normal" title="Start match"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek5-un-A2Z">
+                                        <rect key="frame" x="0.0" y="40" width="116" height="30"/>
+                                        <state key="normal" title="Break toevoegen"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnY-FQ-pA3">
+                                        <rect key="frame" x="0.0" y="80" width="116" height="30"/>
+                                        <state key="normal" title="Breaks bekijken"/>
+                                        <connections>
+                                            <segue destination="JdS-Qv-9vK" kind="show" id="W64-uX-L5F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFx-iL-bqR">
+                                        <rect key="frame" x="0.0" y="120" width="116" height="30"/>
+                                        <state key="normal" title="Match statistiek"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="YF5-Ub-O9n"/>
+                                    <constraint firstAttribute="height" constant="150" id="ufj-Qe-lUO"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-E6-GCi">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gpy-E6-GCi" secondAttribute="bottom" id="8cW-2m-AH9"/>
+                            <constraint firstItem="Znc-2Z-xoe" firstAttribute="top" secondItem="rgc-qE-BQt" secondAttribute="top" id="96z-b6-3Bt"/>
+                            <constraint firstItem="Znc-2Z-xoe" firstAttribute="leading" secondItem="rgc-qE-BQt" secondAttribute="leading" id="NTQ-Th-HKf"/>
+                            <constraint firstAttribute="trailing" secondItem="gpy-E6-GCi" secondAttribute="trailing" id="Yf4-B5-8wW"/>
+                            <constraint firstItem="gpy-E6-GCi" firstAttribute="leading" secondItem="Znc-2Z-xoe" secondAttribute="leading" id="fIm-ER-t5a"/>
+                            <constraint firstItem="gpy-E6-GCi" firstAttribute="top" secondItem="rgc-qE-BQt" secondAttribute="top" id="z1g-32-C2B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rgc-qE-BQt"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fZw-Pn-v4P">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Image" id="Sid-Gf-peH">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="hamburgerBtnTapped:" destination="qqy-Jh-wjP" id="PSN-jm-Zr8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="LeadingC" destination="fIm-ER-t5a" id="FKp-mS-7xz"/>
+                        <outlet property="OverviewView" destination="gpy-E6-GCi" id="vHK-Fn-cdG"/>
+                        <outlet property="TrailingC" destination="Yf4-B5-8wW" id="TxG-yl-zzW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEq-Ut-IXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="134"/>
+            <point key="canvasLocation" x="1879.7101449275365" y="133.25892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="p7v-xA-1Ql">
+            <objects>
+                <viewController id="JdS-Qv-9vK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4RQ-to-zag">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vdc-qC-AfK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNW-6M-NVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="834"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tj7-d3-iFc">
+            <objects>
+                <navigationController storyboardIdentifier="navigationView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TcB-Nc-3qn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KYe-JX-yeK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qqy-Jh-wjP" kind="relationship" relationship="rootViewController" id="lDI-Jz-89m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klO-Ct-Gra" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941.60000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="37.5" height="37.5"/>
+    </resources>
 </document>

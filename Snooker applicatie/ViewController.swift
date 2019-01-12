@@ -70,7 +70,7 @@ class ViewController: UIViewController {
                     })
                 } else if(statuscode == 200){
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "overviewView")
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "navigationView")
                     self.present(newViewController, animated: true, completion: nil)
                 } else {
                     
