@@ -286,6 +286,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3b-8O-khs">
+                                <rect key="frame" x="124" y="357" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Wedstrijd Spelen">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWy-Cc-kRg">
+                                <rect key="frame" x="124" y="433" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Break Toevoegen">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULJ-zR-sta">
+                                <rect key="frame" x="124" y="514" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Breaks Bekijken">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-Bg-pBt">
+                                <rect key="frame" x="124" y="599" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Statistieken Bekijken">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maak hier een keuze van wat u wilt doen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXV-aD-jkL">
+                                <rect key="frame" x="69" y="235" width="308" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -307,12 +342,17 @@
                         <outlet property="NavBarPictureView" destination="k2K-08-NyU" id="zzp-BM-klM"/>
                         <outlet property="OverviewView" destination="Tng-VK-UI4" id="2V0-11-6Gk"/>
                         <outlet property="btnAddBreak" destination="ek5-un-A2Z" id="xFM-Df-7nN"/>
+                        <outlet property="btnAddBreakOverview" destination="yWy-Cc-kRg" id="VbA-UY-qFV"/>
                         <outlet property="btnMatchStatistic" destination="dFx-iL-bqR" id="iXM-MH-eqQ"/>
+                        <outlet property="btnPlayMatchOverview" destination="R3b-8O-khs" id="o5F-wm-SNK"/>
                         <outlet property="btnShowBreak" destination="fnY-FQ-pA3" id="Yyw-8B-Ngr"/>
+                        <outlet property="btnShowBreakOverview" destination="ULJ-zR-sta" id="M6U-2Y-R0R"/>
+                        <outlet property="btnShowMatchStatisticOverview" destination="5ml-Bg-pBt" id="OfC-qI-PyB"/>
                         <outlet property="btnStartMatch" destination="XYa-WE-jPk" id="JsJ-Cz-2Fv"/>
                         <outlet property="navBar" destination="Znc-2Z-xoe" id="79j-0e-IMr"/>
                         <outlet property="navBarUnderPicture" destination="SeK-Ku-kgb" id="Bax-H1-mrc"/>
                         <outlet property="navBarView" destination="mgP-33-agB" id="j5C-vi-xet"/>
+                        <outlet property="navigationTopBar" destination="fZw-Pn-v4P" id="yAZ-mA-Kac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEq-Ut-IXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -356,4 +396,5 @@
     <resources>
         <image name="Image" width="37.5" height="37.5"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

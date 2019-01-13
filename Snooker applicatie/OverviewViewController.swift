@@ -23,6 +23,29 @@ class OverviewViewController: UIViewController {
         btnAddBreak.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
         btnMatchStatistic.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
 
+        btnPlayMatchOverview.backgroundColor = .clear
+        btnPlayMatchOverview.layer.borderColor = UIColor.lightGray.cgColor
+        btnPlayMatchOverview.layer.cornerRadius = 5
+        btnPlayMatchOverview.layer.borderWidth = 1
+        
+        btnAddBreakOverview.backgroundColor = .clear
+        btnAddBreakOverview.layer.borderColor = UIColor.lightGray.cgColor
+        btnAddBreakOverview.layer.cornerRadius = 5
+        btnAddBreakOverview.layer.borderWidth = 1
+        
+        btnShowBreakOverview.backgroundColor = .clear
+        btnShowBreakOverview.layer.borderColor = UIColor.lightGray.cgColor
+        btnShowBreakOverview.layer.cornerRadius = 5
+        btnShowBreakOverview.layer.borderWidth = 1
+        
+        btnShowMatchStatisticOverview.backgroundColor = .clear
+        btnShowMatchStatisticOverview.layer.borderColor = UIColor.lightGray.cgColor
+        btnShowMatchStatisticOverview.layer.cornerRadius = 5
+        btnShowMatchStatisticOverview.layer.borderWidth = 1
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.backgroundColor = UIColor.blue
+        navigationBarAppearace.barTintColor = UIColor.blue
+        navigationBarAppearace.tintColor = UIColor.white
         NavBarPictureView.isHidden = true
         navBarView.isHidden = true
         navBar.isHidden = true
@@ -38,6 +61,13 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var LeadingC: NSLayoutConstraint!
     @IBOutlet weak var navBar: UIStackView!
     @IBOutlet weak var navBarView: UIView!
+    @IBOutlet weak var btnPlayMatchOverview: UIButton!
+    @IBOutlet weak var btnAddBreakOverview: UIButton!
+    @IBOutlet weak var btnShowBreakOverview: UIButton!
+    @IBOutlet weak var btnShowMatchStatisticOverview: UIButton!
+    @IBOutlet weak var navigationTopBar: UINavigationItem!
+    
+    
     
     var hamburgerMenuIsVisible = false
     
