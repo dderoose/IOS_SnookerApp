@@ -11,21 +11,38 @@ import UIKit
 
 class OverviewViewController: UIViewController {
 
-    
-    @IBOutlet weak var OverviewView: UIView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        OverviewView.layer.zPosition = 0
+        navBarView.layer.zPosition = 1
+        btnStartMatch.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
+        btnShowBreak.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
+        btnAddBreak.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
+        btnMatchStatistic.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
+
+        navBarView.isHidden = true
+        navBar.isHidden = true
+    }
+    @IBOutlet weak var btnMatchStatistic: UIButton!
+    @IBOutlet weak var btnShowBreak: UIButton!
+    @IBOutlet weak var btnAddBreak: UIButton!
+    @IBOutlet weak var btnStartMatch: UIButton!
+    @IBOutlet var OverviewView: UIView!
     @IBOutlet weak var TrailingC: NSLayoutConstraint!
     @IBOutlet weak var LeadingC: NSLayoutConstraint!
+    @IBOutlet weak var navBar: UIStackView!
+    @IBOutlet weak var navBarView: UIView!
     
     var hamburgerMenuIsVisible = false
     
     @IBAction func hamburgerBtnTapped(_ sender: Any) {
         if !hamburgerMenuIsVisible{
-            LeadingC.constant = 150
-            TrailingC.constant = -150
+            navBarView.isHidden = false
+            navBar.isHidden = false
             hamburgerMenuIsVisible = true
         } else {
-            LeadingC.constant = 0
-            TrailingC.constant = 0
+            navBarView.isHidden = true
+            navBar.isHidden = true
             hamburgerMenuIsVisible = false
         }
         
