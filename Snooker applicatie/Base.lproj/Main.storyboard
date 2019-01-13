@@ -202,59 +202,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgP-33-agB">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgP-33-agB">
                                 <rect key="frame" x="0.0" y="88" width="275" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="sRv-tc-60p">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="168"/>
-                                        <color key="backgroundColor" red="0.092238001943914183" green="0.21125727899643132" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="275" id="BgN-iL-vlj"/>
-                                            <constraint firstAttribute="height" constant="168" id="Lbj-vP-WsP"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Znc-2Z-xoe">
-                                        <rect key="frame" x="0.0" y="176" width="250" height="150"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2K-08-NyU">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="175"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-WE-jPk">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
-                                                <state key="normal" title="Start match">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek5-un-A2Z">
-                                                <rect key="frame" x="0.0" y="43" width="250" height="30"/>
-                                                <state key="normal" title="Break toevoegen">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnY-FQ-pA3">
-                                                <rect key="frame" x="0.0" y="86" width="250" height="30"/>
-                                                <state key="normal" title="Breaks bekijken">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="JdS-Qv-9vK" kind="show" id="W64-uX-L5F"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFx-iL-bqR">
-                                                <rect key="frame" x="0.0" y="129" width="250" height="21"/>
-                                                <state key="normal" title="Match statistiek">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Fwb-WG-xY6">
+                                                <rect key="frame" x="36" y="0.0" width="201" height="173"/>
+                                            </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.66666668650000005" green="0.016579949970000001" blue="0.025488651760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.092238001939999995" green="0.21125727899999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="ufj-Qe-lUO"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="wFB-d5-1G8"/>
+                                            <constraint firstItem="Fwb-WG-xY6" firstAttribute="leading" secondItem="k2K-08-NyU" secondAttribute="leading" constant="36" id="PJ8-HM-YD0"/>
+                                            <constraint firstAttribute="width" constant="275" id="W7R-gL-DgB"/>
+                                            <constraint firstItem="Fwb-WG-xY6" firstAttribute="top" secondItem="k2K-08-NyU" secondAttribute="top" id="ZwT-cb-ClT"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fwb-WG-xY6" secondAttribute="trailing" constant="38" id="j6G-Sa-bEK"/>
+                                            <constraint firstAttribute="height" constant="175" id="q05-7O-knc"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fwb-WG-xY6" secondAttribute="bottom" constant="2" id="rPI-2F-z1Q"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SeK-Ku-kgb">
+                                        <rect key="frame" x="0.0" y="167" width="275" height="641"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Znc-2Z-xoe">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="159"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-WE-jPk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
+                                                        <state key="normal" title="Start match">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek5-un-A2Z">
+                                                        <rect key="frame" x="0.0" y="43" width="275" height="30"/>
+                                                        <state key="normal" title="Break toevoegen">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnY-FQ-pA3">
+                                                        <rect key="frame" x="0.0" y="86" width="275" height="30"/>
+                                                        <state key="normal" title="Breaks bekijken">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="JdS-Qv-9vK" kind="show" id="W64-uX-L5F"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFx-iL-bqR">
+                                                        <rect key="frame" x="0.0" y="129" width="275" height="30"/>
+                                                        <state key="normal" title="Match statistiek">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.66666668650000005" green="0.016579949970000001" blue="0.025488651760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="275" id="MVD-zs-MBf"/>
+                                                    <constraint firstAttribute="height" constant="159" id="wCr-eW-Pw2"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="275" id="3JX-gP-92k"/>
+                                            <constraint firstItem="Znc-2Z-xoe" firstAttribute="top" secondItem="SeK-Ku-kgb" secondAttribute="top" id="DDa-AR-cO3"/>
+                                            <constraint firstAttribute="height" constant="641" id="XSA-7O-qgL"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.66666668650000005" green="0.4100116392" blue="0.1118086376" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="Znc-2Z-xoe" firstAttribute="top" secondItem="sRv-tc-60p" secondAttribute="bottom" constant="15" id="0d5-Pt-vFC"/>
+                                    <constraint firstItem="SeK-Ku-kgb" firstAttribute="top" secondItem="mgP-33-agB" secondAttribute="top" constant="167" id="Lw6-rf-H2Q"/>
+                                    <constraint firstAttribute="height" constant="808" id="SHU-OQ-z2o"/>
+                                    <constraint firstAttribute="width" constant="275" id="bDe-NE-nok"/>
+                                    <constraint firstItem="k2K-08-NyU" firstAttribute="top" secondItem="mgP-33-agB" secondAttribute="top" id="mnv-EV-E0l"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overzichtsscherm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXj-1c-I8q">
@@ -266,6 +288,9 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mgP-33-agB" firstAttribute="top" secondItem="rgc-qE-BQt" secondAttribute="top" id="bjT-An-k7u"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rgc-qE-BQt"/>
                     </view>
                     <toolbarItems/>
@@ -279,12 +304,14 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="NavBarPictureView" destination="k2K-08-NyU" id="zzp-BM-klM"/>
                         <outlet property="OverviewView" destination="Tng-VK-UI4" id="2V0-11-6Gk"/>
                         <outlet property="btnAddBreak" destination="ek5-un-A2Z" id="xFM-Df-7nN"/>
                         <outlet property="btnMatchStatistic" destination="dFx-iL-bqR" id="iXM-MH-eqQ"/>
                         <outlet property="btnShowBreak" destination="fnY-FQ-pA3" id="Yyw-8B-Ngr"/>
                         <outlet property="btnStartMatch" destination="XYa-WE-jPk" id="JsJ-Cz-2Fv"/>
                         <outlet property="navBar" destination="Znc-2Z-xoe" id="79j-0e-IMr"/>
+                        <outlet property="navBarUnderPicture" destination="SeK-Ku-kgb" id="Bax-H1-mrc"/>
                         <outlet property="navBarView" destination="mgP-33-agB" id="j5C-vi-xet"/>
                     </connections>
                 </viewController>

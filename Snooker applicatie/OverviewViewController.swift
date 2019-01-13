@@ -15,14 +15,20 @@ class OverviewViewController: UIViewController {
         super.viewDidLoad()
         OverviewView.layer.zPosition = 0
         navBarView.layer.zPosition = 1
+        navBarView.backgroundColor = UIColor.gray
+        NavBarPictureView.layer.zPosition = 2
+        navBarUnderPicture.layer.zPosition = 2
         btnStartMatch.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
         btnShowBreak.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
         btnAddBreak.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
         btnMatchStatistic.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
 
+        NavBarPictureView.isHidden = true
         navBarView.isHidden = true
         navBar.isHidden = true
     }
+    @IBOutlet weak var navBarUnderPicture: UIView!
+    @IBOutlet weak var NavBarPictureView: UIView!
     @IBOutlet weak var btnMatchStatistic: UIButton!
     @IBOutlet weak var btnShowBreak: UIButton!
     @IBOutlet weak var btnAddBreak: UIButton!
@@ -37,10 +43,12 @@ class OverviewViewController: UIViewController {
     
     @IBAction func hamburgerBtnTapped(_ sender: Any) {
         if !hamburgerMenuIsVisible{
+            NavBarPictureView.isHidden = false
             navBarView.isHidden = false
             navBar.isHidden = false
             hamburgerMenuIsVisible = true
         } else {
+            NavBarPictureView.isHidden = true
             navBarView.isHidden = true
             navBar.isHidden = true
             hamburgerMenuIsVisible = false
