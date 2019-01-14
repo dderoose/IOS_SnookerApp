@@ -192,7 +192,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lz0-wM-WE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="834.33283358320841"/>
+            <point key="canvasLocation" x="-771" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZLR-nJ-Pd9">
+            <objects>
+                <viewController id="d3v-mW-ArQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5L0-A2-Xld">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wedstrijd Gegevens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpD-pS-pWD">
+                                <rect key="frame" x="48" y="135" width="319" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="y7I-eg-GZd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrK-PE-ujQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="834"/>
         </scene>
         <!--Overview View Controller-->
         <scene sceneID="NpQ-aK-hhv">
@@ -208,7 +232,7 @@
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2K-08-NyU">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="175"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Fwb-WG-xY6">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snooker_triangle" translatesAutoresizingMaskIntoConstraints="NO" id="Fwb-WG-xY6">
                                                 <rect key="frame" x="36" y="0.0" width="201" height="173"/>
                                             </imageView>
                                         </subviews>
@@ -233,12 +257,18 @@
                                                         <state key="normal" title="Start match">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="d3v-mW-ArQ" kind="show" id="xH3-ot-bDs"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek5-un-A2Z">
                                                         <rect key="frame" x="0.0" y="43" width="275" height="30"/>
                                                         <state key="normal" title="Break toevoegen">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="d8U-ut-Vw3" kind="show" id="gUi-qv-ogv"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnY-FQ-pA3">
                                                         <rect key="frame" x="0.0" y="86" width="275" height="30"/>
@@ -254,6 +284,9 @@
                                                         <state key="normal" title="Match statistiek">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="0Th-YH-SMq" kind="show" id="G90-JL-Z1X"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.66666668650000005" green="0.016579949970000001" blue="0.025488651760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -292,6 +325,9 @@
                                 <state key="normal" title="Wedstrijd Spelen">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="d3v-mW-ArQ" kind="show" id="VLn-35-mnj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWy-Cc-kRg">
                                 <rect key="frame" x="124" y="433" width="198" height="30"/>
@@ -299,6 +335,9 @@
                                 <state key="normal" title="Break Toevoegen">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="d8U-ut-Vw3" kind="show" id="evB-Tb-Imp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULJ-zR-sta">
                                 <rect key="frame" x="124" y="514" width="198" height="30"/>
@@ -306,6 +345,9 @@
                                 <state key="normal" title="Breaks Bekijken">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="JdS-Qv-9vK" kind="show" id="AgQ-rW-1xb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-Bg-pBt">
                                 <rect key="frame" x="124" y="599" width="198" height="30"/>
@@ -313,6 +355,9 @@
                                 <state key="normal" title="Statistieken Bekijken">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0Th-YH-SMq" kind="show" id="8aH-3t-uMa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maak hier een keuze van wat u wilt doen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXV-aD-jkL">
                                 <rect key="frame" x="69" y="235" width="308" height="21"/>
@@ -330,10 +375,14 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="fZw-Pn-v4P">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="Image" id="Sid-Gf-peH">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Image" id="YQI-0E-tqS">
                             <connections>
-                                <action selector="hamburgerBtnTapped:" destination="qqy-Jh-wjP" id="PSN-jm-Zr8"/>
+                                <action selector="hamburgerBtnNavTapped:" destination="qqy-Jh-wjP" id="hl9-dJ-XGM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Logout_image" id="CsV-0D-a3D">
+                            <connections>
+                                <action selector="logoutBtnTapped:" destination="qqy-Jh-wjP" id="Sj3-t5-lEd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -372,7 +421,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNW-6M-NVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="834"/>
+            <point key="canvasLocation" x="2864" y="834"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qWl-Eg-fmY">
+            <objects>
+                <viewController id="d8U-ut-Vw3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dOz-69-Zst">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aoE-ob-Hkd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mL1-bL-C2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="834"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZfA-eU-zOD">
+            <objects>
+                <viewController id="0Th-YH-SMq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H67-Xt-4h1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="T5P-wI-fSU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b02-51-KPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3726" y="834"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tj7-d3-iFc">
@@ -395,6 +474,14 @@
     </scenes>
     <resources>
         <image name="Image" width="37.5" height="37.5"/>
+        <image name="Logout_image" width="16" height="16"/>
+        <image name="Snooker_triangle" width="2000" height="1790"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="G90-JL-Z1X"/>
+        <segue reference="gUi-qv-ogv"/>
+        <segue reference="AgQ-rW-1xb"/>
+        <segue reference="VLn-35-mnj"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -71,7 +71,7 @@ class OverviewViewController: UIViewController {
     
     var hamburgerMenuIsVisible = false
     
-    @IBAction func hamburgerBtnTapped(_ sender: Any) {
+    @IBAction func hamburgerBtnNavTapped(_ sender: Any) {
         if !hamburgerMenuIsVisible{
             NavBarPictureView.isHidden = false
             navBarView.isHidden = false
@@ -90,4 +90,11 @@ class OverviewViewController: UIViewController {
             print("The animation is complete!")
         }
     }
+    @IBAction func logoutBtnTapped(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginView")
+        self.present(newViewController, animated: true, completion: nil)
+    
+    }
+
 }
