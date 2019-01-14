@@ -69,6 +69,10 @@ class ViewController: UIViewController {
                         toastLabel.removeFromSuperview()
                     })
                 } else if(statuscode == 200){
+                    let convertedString = String(describing: response.result.value!)
+                    //let value = response.result.value! as NSString
+                    let separatedQuotes = convertedString.components(separatedBy: "\"")
+                    Constants.token = separatedQuotes[3]
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "navigationView")
                     self.present(newViewController, animated: true, completion: nil)
