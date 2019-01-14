@@ -24,6 +24,7 @@
 		D4C742F221E904020010F09E /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C742F121E904020010F09E /* OverviewViewController.swift */; };
 		D4F54A8B21EC9EB2003B5404 /* ViewBreakController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */; };
 		D4F54A8F21ECAD00003B5404 /* Breaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8E21ECAD00003B5404 /* Breaks.swift */; };
+		D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */; };
 		E25446DD83EEB59CC987AA53 /* Pods_Snooker_applicatie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18FF93CC53DE3559B531554 /* Pods_Snooker_applicatie.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		D4C742F121E904020010F09E /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBreakController.swift; sourceTree = "<group>"; };
 		D4F54A8E21ECAD00003B5404 /* Breaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breaks.swift; sourceTree = "<group>"; };
+		D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreaksTableViewCell.swift; sourceTree = "<group>"; };
 		E8592391CA6940D399D71905 /* Pods-Snooker applicatieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snooker applicatieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snooker applicatieUITests/Pods-Snooker applicatieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EA5BAFFFF143ED1C57C8168A /* Pods-Snooker applicatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snooker applicatie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snooker applicatie/Pods-Snooker applicatie.debug.xcconfig"; sourceTree = "<group>"; };
 		F18FF93CC53DE3559B531554 /* Pods_Snooker_applicatie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snooker_applicatie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 				D4C742F121E904020010F09E /* OverviewViewController.swift */,
 				D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */,
 				D4158E7A21ECCFEE00A4F89B /* Constants.swift */,
+				D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */,
 			);
 			path = "Snooker applicatie";
 			sourceTree = "<group>";
@@ -376,12 +379,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Snooker applicatie/Pods-Snooker applicatie-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -423,6 +428,7 @@
 				D4A8FEC221E8CAB900DD1753 /* RegisterViewController.swift in Sources */,
 				D4C742F221E904020010F09E /* OverviewViewController.swift in Sources */,
 				D4A8FE5C21E8B58300DD1753 /* ViewController.swift in Sources */,
+				D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */,
 				D4A8FE5A21E8B58300DD1753 /* AppDelegate.swift in Sources */,
 				D4158E7B21ECCFEE00A4F89B /* Constants.swift in Sources */,
 			);
