@@ -16,7 +16,8 @@ class MatchTableViewCell: UITableViewCell {
     @IBOutlet weak var dateOfMatch: UILabel!
     @IBOutlet weak var lblResult: UILabel!
     @IBOutlet weak var lblResultMatch: UILabel!
-    
+    @IBOutlet weak var btnMatchstatistic: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

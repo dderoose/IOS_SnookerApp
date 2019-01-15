@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 import JWTDecode
 
-class ViewMatchController: UITableViewController {
+class ViewMatchController: UITableViewController{
     
     @IBOutlet var tableMatchView: UITableView!
     var arrayMatches: [AnyObject] = []
@@ -104,10 +104,21 @@ class ViewMatchController: UITableViewController {
         
         cell.lblResult.text = "Uitslag"
         cell.lblResultMatch.text = String(matches["NumberMatchesWonPlayer1"] as! Int)  + ":" + String(matches["NumberMatchesWonPlayer2"] as! Int)
-        
+        cell.btnMatchstatistic.tag = matches["MatchId"] as! Int
+        cell.btnMatchstatistic.addTarget(self, action: #selector(nextScreen(sender:)), for: .touchUpInside)
         
         return cell
     }
     
+    var matchId: Int = 0
+    @objc func nextScreen(sender: UIButton!){
+        matchId = sender.tag
+        self.performSegue(withIdentifier: "matchStatisticSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let matchStatisticViewController = segue.destination as? MatchStatisticViewController else { return }
+        matchStatisticViewController.id = matchId
+    }
 }
 

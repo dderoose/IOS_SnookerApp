@@ -532,9 +532,23 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndr-Ia-DGw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ndr-Ia-DGw" firstAttribute="top" secondItem="axd-7h-ark" secondAttribute="top" id="MLd-hu-QjD"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ndr-Ia-DGw" secondAttribute="bottom" id="SQA-hm-zfx"/>
+                                        <constraint firstItem="Ndr-Ia-DGw" firstAttribute="top" secondItem="axd-7h-ark" secondAttribute="top" id="Ux3-15-ImB"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ndr-Ia-DGw" secondAttribute="bottom" id="bqc-R4-WAf"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ndr-Ia-DGw" secondAttribute="trailing" id="eiR-N7-YGK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ndr-Ia-DGw" secondAttribute="trailing" id="kWm-B3-Sbm"/>
+                                        <constraint firstItem="Ndr-Ia-DGw" firstAttribute="leading" secondItem="axd-7h-ark" secondAttribute="leading" id="olc-Us-YBs"/>
+                                        <constraint firstItem="Ndr-Ia-DGw" firstAttribute="leading" secondItem="axd-7h-ark" secondAttribute="leading" id="zXM-eL-6X1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="btnMatchstatistic" destination="Ndr-Ia-DGw" id="aMj-hN-SJq"/>
                                     <outlet property="dateOfMatch" destination="Ooz-7Q-8ja" id="Cjb-tZ-uZU"/>
                                     <outlet property="lblResult" destination="yiE-DL-cfL" id="XPx-g7-HWO"/>
                                     <outlet property="lblResultMatch" destination="eEo-61-HVO" id="4XB-CW-6Rp"/>
@@ -545,11 +559,36 @@
                     </tableView>
                     <connections>
                         <outlet property="tableMatchView" destination="6bY-T9-bot" id="BTu-MS-ZOi"/>
+                        <segue destination="jVw-Xw-6vm" kind="show" identifier="matchStatisticSegue" id="m0L-Gj-kOP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b02-51-KPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3724.6376811594205" y="833.70535714285711"/>
+        </scene>
+        <!--Match Statistic View Controller-->
+        <scene sceneID="3Ji-BP-tQS">
+            <objects>
+                <viewController storyboardIdentifier="matchStatisticView" id="jVw-Xw-6vm" customClass="MatchStatisticViewController" customModule="Snooker_applicatie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ym-gz-EZd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Match Statistieken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3U-bm-VZ4">
+                                <rect key="frame" x="136" y="138" width="142" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="z7P-31-bBk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ig6-rp-GDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4643" y="834"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tj7-d3-iFc">
@@ -578,8 +617,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="G90-JL-Z1X"/>
         <segue reference="gUi-qv-ogv"/>
-        <segue reference="AgQ-rW-1xb"/>
-        <segue reference="VLn-35-mnj"/>
+        <segue reference="W64-uX-L5F"/>
+        <segue reference="xH3-ot-bDs"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
