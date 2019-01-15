@@ -22,6 +22,8 @@
 		D4A8FEC621E8E3DD00DD1753 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FEC521E8E3DD00DD1753 /* User.swift */; };
 		D4A8FEC821E8F47C00DD1753 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A8FEC721E8F47C00DD1753 /* Default-568h@2x.png */; };
 		D4C742F221E904020010F09E /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C742F121E904020010F09E /* OverviewViewController.swift */; };
+		D4F06A8821EDDCA0003FA33F /* ViewMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F06A8721EDDCA0003FA33F /* ViewMatchController.swift */; };
+		D4F06A8A21EDDDED003FA33F /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F06A8921EDDDED003FA33F /* MatchTableViewCell.swift */; };
 		D4F54A8B21EC9EB2003B5404 /* ViewBreakController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */; };
 		D4F54A8F21ECAD00003B5404 /* Breaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8E21ECAD00003B5404 /* Breaks.swift */; };
 		D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */; };
@@ -70,6 +72,8 @@
 		D4A8FEC521E8E3DD00DD1753 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		D4A8FEC721E8F47C00DD1753 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D4C742F121E904020010F09E /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		D4F06A8721EDDCA0003FA33F /* ViewMatchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMatchController.swift; sourceTree = "<group>"; };
+		D4F06A8921EDDDED003FA33F /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBreakController.swift; sourceTree = "<group>"; };
 		D4F54A8E21ECAD00003B5404 /* Breaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breaks.swift; sourceTree = "<group>"; };
 		D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreaksTableViewCell.swift; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 				D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */,
 				D4158E7A21ECCFEE00A4F89B /* Constants.swift */,
 				D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */,
+				D4F06A8721EDDCA0003FA33F /* ViewMatchController.swift */,
+				D4F06A8921EDDDED003FA33F /* MatchTableViewCell.swift */,
 			);
 			path = "Snooker applicatie";
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F06A8A21EDDDED003FA33F /* MatchTableViewCell.swift in Sources */,
 				D4F54A8B21EC9EB2003B5404 /* ViewBreakController.swift in Sources */,
 				D4A8FEC621E8E3DD00DD1753 /* User.swift in Sources */,
 				D4F54A8F21ECAD00003B5404 /* Breaks.swift in Sources */,
@@ -430,6 +437,7 @@
 				D4A8FE5C21E8B58300DD1753 /* ViewController.swift in Sources */,
 				D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */,
 				D4A8FE5A21E8B58300DD1753 /* AppDelegate.swift in Sources */,
+				D4F06A8821EDDCA0003FA33F /* ViewMatchController.swift in Sources */,
 				D4158E7B21ECCFEE00A4F89B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

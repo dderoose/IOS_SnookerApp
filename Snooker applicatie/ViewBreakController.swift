@@ -93,6 +93,12 @@ class ViewBreakController: UITableViewController {
             let date = dateFormatter.date(from: breaks["MomentPlayed"] as! String)!
             dateFormatter.dateFormat = "dd-MM-yyyy"
             cell.dateBreak.text = dateFormatter.string(from: date)
+        } else if(numberLetters == 21){
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.S"
+            dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
+            let date = dateFormatter.date(from: breaks["MomentPlayed"] as! String)!
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            cell.dateBreak.text = dateFormatter.string(from: date)
         } else {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
