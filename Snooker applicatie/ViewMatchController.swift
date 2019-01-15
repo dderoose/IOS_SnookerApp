@@ -14,7 +14,6 @@ import JWTDecode
 class ViewMatchController: UITableViewController {
     
     @IBOutlet var tableMatchView: UITableView!
-    //var listBreakss:Array<Breaks> = []
     var arrayMatches: [AnyObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +26,8 @@ class ViewMatchController: UITableViewController {
         if let idUser = name.string {
             id = idUser
         }
-        
-        //let separatedJwt = separatedDubblePoint.components(separatedBy: ":")
-        //print(separatedJwt)
         print(id)
         Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/userid/\(id)").responseData { response in
-            //debugPrint("All Response Info: \(response)")
             if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
                 let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
                 var _: NSError?
@@ -41,7 +36,6 @@ class ViewMatchController: UITableViewController {
                     let jsonResult : AnyObject? = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as AnyObject
                     let matchListArray = (jsonResult as! NSArray) as Array
                     self.arrayMatches = matchListArray
-                    print(self.arrayMatches.count)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
