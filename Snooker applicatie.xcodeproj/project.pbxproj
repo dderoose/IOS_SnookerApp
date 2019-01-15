@@ -12,7 +12,6 @@
 		D4158E7B21ECCFEE00A4F89B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4158E7A21ECCFEE00A4F89B /* Constants.swift */; };
 		D4A8FE5A21E8B58300DD1753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FE5921E8B58300DD1753 /* AppDelegate.swift */; };
 		D4A8FE5C21E8B58300DD1753 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FE5B21E8B58300DD1753 /* ViewController.swift */; };
-		D4A8FE5F21E8B58300DD1753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A8FE5D21E8B58300DD1753 /* Main.storyboard */; };
 		D4A8FE6121E8B58400DD1753 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4A8FE6021E8B58400DD1753 /* Assets.xcassets */; };
 		D4A8FE6421E8B58400DD1753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A8FE6221E8B58400DD1753 /* LaunchScreen.storyboard */; };
 		D4A8FE6F21E8B58400DD1753 /* Snooker_applicatieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FE6E21E8B58400DD1753 /* Snooker_applicatieTests.swift */; };
@@ -25,6 +24,8 @@
 		D4F06A8821EDDCA0003FA33F /* ViewMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F06A8721EDDCA0003FA33F /* ViewMatchController.swift */; };
 		D4F06A8A21EDDDED003FA33F /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F06A8921EDDDED003FA33F /* MatchTableViewCell.swift */; };
 		D4F06A8C21EE05F4003FA33F /* MatchStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F06A8B21EE05F4003FA33F /* MatchStatisticViewController.swift */; };
+		D4F06A8E21EE1E76003FA33F /* AddBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F06A8D21EE1E76003FA33F /* AddBreakViewController.swift */; };
+		D4F06A9021EE417D003FA33F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F06A8F21EE417D003FA33F /* Main.storyboard */; };
 		D4F54A8B21EC9EB2003B5404 /* ViewBreakController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */; };
 		D4F54A8F21ECAD00003B5404 /* Breaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8E21ECAD00003B5404 /* Breaks.swift */; };
 		D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */; };
@@ -58,7 +59,6 @@
 		D4A8FE5621E8B58300DD1753 /* Snooker applicatie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snooker applicatie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A8FE5921E8B58300DD1753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4A8FE5B21E8B58300DD1753 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D4A8FE5E21E8B58300DD1753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4A8FE6021E8B58400DD1753 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4A8FE6321E8B58400DD1753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4A8FE6521E8B58400DD1753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +76,8 @@
 		D4F06A8721EDDCA0003FA33F /* ViewMatchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMatchController.swift; sourceTree = "<group>"; };
 		D4F06A8921EDDDED003FA33F /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		D4F06A8B21EE05F4003FA33F /* MatchStatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatisticViewController.swift; sourceTree = "<group>"; };
+		D4F06A8D21EE1E76003FA33F /* AddBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBreakViewController.swift; sourceTree = "<group>"; };
+		D4F06A8F21EE417D003FA33F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBreakController.swift; sourceTree = "<group>"; };
 		D4F54A8E21ECAD00003B5404 /* Breaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breaks.swift; sourceTree = "<group>"; };
 		D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreaksTableViewCell.swift; sourceTree = "<group>"; };
@@ -162,10 +164,10 @@
 		D4A8FE5821E8B58300DD1753 /* Snooker applicatie */ = {
 			isa = PBXGroup;
 			children = (
+				D4F06A8F21EE417D003FA33F /* Main.storyboard */,
 				D4A8FEC321E8E38A00DD1753 /* Models */,
 				D4A8FE5921E8B58300DD1753 /* AppDelegate.swift */,
 				D4A8FE5B21E8B58300DD1753 /* ViewController.swift */,
-				D4A8FE5D21E8B58300DD1753 /* Main.storyboard */,
 				D4A8FE6021E8B58400DD1753 /* Assets.xcassets */,
 				D4A8FE6221E8B58400DD1753 /* LaunchScreen.storyboard */,
 				D4A8FE6521E8B58400DD1753 /* Info.plist */,
@@ -179,6 +181,7 @@
 				D4F06A8721EDDCA0003FA33F /* ViewMatchController.swift */,
 				D4F06A8921EDDDED003FA33F /* MatchTableViewCell.swift */,
 				D4F06A8B21EE05F4003FA33F /* MatchStatisticViewController.swift */,
+				D4F06A8D21EE1E76003FA33F /* AddBreakViewController.swift */,
 			);
 			path = "Snooker applicatie";
 			sourceTree = "<group>";
@@ -310,10 +313,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A8FE6421E8B58400DD1753 /* LaunchScreen.storyboard in Resources */,
+				D4F06A9021EE417D003FA33F /* Main.storyboard in Resources */,
 				D4A8FE6121E8B58400DD1753 /* Assets.xcassets in Resources */,
 				D4A8FEC421E8E38A00DD1753 /* Models in Resources */,
 				D4A8FEC821E8F47C00DD1753 /* Default-568h@2x.png in Resources */,
-				D4A8FE5F21E8B58300DD1753 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +442,7 @@
 				D4C742F221E904020010F09E /* OverviewViewController.swift in Sources */,
 				D4A8FE5C21E8B58300DD1753 /* ViewController.swift in Sources */,
 				D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */,
+				D4F06A8E21EE1E76003FA33F /* AddBreakViewController.swift in Sources */,
 				D4A8FE5A21E8B58300DD1753 /* AppDelegate.swift in Sources */,
 				D4F06A8C21EE05F4003FA33F /* MatchStatisticViewController.swift in Sources */,
 				D4F06A8821EDDCA0003FA33F /* ViewMatchController.swift in Sources */,
@@ -478,14 +482,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D4A8FE5D21E8B58300DD1753 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4A8FE5E21E8B58300DD1753 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D4A8FE6221E8B58400DD1753 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
