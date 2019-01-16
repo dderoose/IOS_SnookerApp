@@ -277,7 +277,7 @@
         <!--Match View Controller-->
         <scene sceneID="S8b-zs-yt9">
             <objects>
-                <viewController id="baY-ze-jUx" customClass="MatchViewController" customModule="Snooker_applicatie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="matchView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="baY-ze-jUx" customClass="MatchViewController" customModule="Snooker_applicatie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5j-Fa-ueU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,7 +299,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="baY-ze-jUx" kind="show" identifier="" id="7gj-s7-Y8A"/>
+                                    <action selector="btnEndFrameTapped:" destination="baY-ze-jUx" eventType="touchUpInside" id="8m8-hN-WRV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wedstrijd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-Hf-XQN">
@@ -372,6 +372,9 @@
                                 <state key="normal" title="Score toevoegen">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnAddScorePlayer1Tapped:" destination="baY-ze-jUx" eventType="touchUpInside" id="ACv-az-ptt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMu-Kb-LsH">
                                 <rect key="frame" x="260" y="608" width="116" height="30"/>
@@ -379,6 +382,9 @@
                                 <state key="normal" title="Score toevoegen">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnAddScorePlayer2Tapped:" destination="baY-ze-jUx" eventType="touchUpInside" id="3Ka-rY-rCD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-D4-PXE">
                                 <rect key="frame" x="12" y="327" width="151" height="21"/>
@@ -399,14 +405,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JwK-82-Hf6"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btnAddScorePlayer1" destination="NeC-A5-cNg" id="fN9-FJ-cnB"/>
                         <outlet property="btnAddScorePlayer2" destination="yMu-Kb-LsH" id="pO9-By-lhV"/>
-                        <outlet property="btnEndFrame" destination="4iw-Tx-Z6C" id="x24-6N-D78"/>
+                        <outlet property="btnEndFrame" destination="4iw-Tx-Z6C" id="nr7-ho-HQn"/>
                         <outlet property="btnEndMatch" destination="I1y-sw-FOL" id="yWj-tM-95k"/>
                         <outlet property="lblFramesPlayed" destination="Pzg-Cs-26p" id="jai-FO-ET6"/>
                         <outlet property="lblPlayer1" destination="I0e-D4-PXE" id="KVl-o5-SYm"/>
                         <outlet property="lblPlayer2" destination="RTX-HB-b6U" id="SHd-5d-ItF"/>
+                        <outlet property="lblScorePlayer1" destination="eRs-MG-Ejb" id="QZ9-Pb-KkQ"/>
+                        <outlet property="lblScorePlayer2" destination="q5k-Iy-hMC" id="BdX-pC-soY"/>
+                        <outlet property="txtAddScorePlayer1" destination="asH-cl-4T3" id="b3m-pe-bVI"/>
+                        <outlet property="txtAddScorePlayer2" destination="Nr3-GI-XMj" id="7i9-lS-2hX"/>
                         <outlet property="view" destination="t5j-Fa-ueU" id="NwD-gp-uKy"/>
                         <segue destination="qqy-Jh-wjP" kind="show" identifier="endMatchSegue" id="UnW-Wk-kN5"/>
                     </connections>
@@ -424,7 +435,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgP-33-agB">
-                                <rect key="frame" x="0.0" y="44" width="275" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="275" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2K-08-NyU">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="175"/>

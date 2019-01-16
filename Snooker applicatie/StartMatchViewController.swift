@@ -31,8 +31,8 @@ class StartMatchViewController: UIViewController{
     
     var fouten: String! = ""
     var dateOfMatch: String! = ""
-    var matchid: Int = 0
-    var player: String = ""
+    var matchid: Int! = 0
+    var player: String! = ""
     
     @objc func matchScreen(sender: UIButton!){
         fouten = ""
@@ -74,9 +74,9 @@ class StartMatchViewController: UIViewController{
                     if(statuscode == 201){
                         let convertedString = String(describing: response.result.value!)
                         let separatedSpace = convertedString.components(separatedBy: " ")
-                        let separatedPoinKomma = separatedSpace[24].components(separatedBy: ";")
+                        let separatedPointKomma = separatedSpace[24].components(separatedBy: ";")
                         let separatedQuote = separatedSpace[6].components(separatedBy: "\"")
-                        self.matchid = Int(separatedPoinKomma[0])!
+                        self.matchid = Int(separatedPointKomma[0])!
                         self.dateOfMatch = separatedQuote[1]
                         self.performSegue(withIdentifier: "startMatchSegue", sender: self)
                         
@@ -136,7 +136,7 @@ class StartMatchViewController: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let matchViewController = segue.destination as? MatchViewController else { return }
             matchViewController.matchId = matchid
-            matchViewController.opponent = txtOpponent.text!
+            matchViewController.opponent = txtOpponent!.text!
             matchViewController.bestOf = Int(txtFramesToPlay.text!)
             matchViewController.saveBreak = Int(txtSaveBreakFrom.text!)
             matchViewController.playedFrames = 1

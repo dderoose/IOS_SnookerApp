@@ -26,7 +26,6 @@ class ViewMatchController: UITableViewController{
         if let idUser = name.string {
             id = idUser
         }
-        print(id)
         Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/userid/\(id)").responseData { response in
             if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
                 let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
