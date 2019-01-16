@@ -12,7 +12,7 @@ import Alamofire
 import JWTDecode
 
 class MatchViewController: UIViewController{
-    var id: String!
+    var id: Int!
     
 
     @IBAction func btnEndMatchTapped(_ sender: Any) {

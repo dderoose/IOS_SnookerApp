@@ -30,11 +30,10 @@ class StartMatchViewController: UIViewController{
     }
     
     var fouten: String! = ""
-    @IBAction func btnStartMatchTapped(_ sender: Any) {
+    var matchid: Int = 0
+    
+    @objc func matchScreen(sender: UIButton!){
         fouten = ""
-        
-        
-        
         if(txtOpponent.text != "" && txtFramesToPlay.text != "" && txtSaveBreakFrom.text != "") {
             let jwt = try! decode(jwt: Constants.token)
             
@@ -70,7 +69,12 @@ class StartMatchViewController: UIViewController{
             Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches", method: .post,parameters: parameters).responseJSON { (response) -> Void in
                 if let statuscode = response.response?.statusCode{
                     if(statuscode == 201){
-
+                        let convertedString = String(describing: response.result.value!)
+                        let separatedSpace = convertedString.components(separatedBy: " ")
+                        let separatedPoinKomma = separatedSpace[24].components(separatedBy: ";")
+                        self.matchid = Int(separatedPoinKomma[0])!
+                        self.performSegue(withIdentifier: "startMatchSegue", sender: self)
+                        
                     } else{
                         let errorss = response.description
                         let errorsplit = errorss.components(separatedBy: "\"")
@@ -99,7 +103,6 @@ class StartMatchViewController: UIViewController{
                     }
                     
                 }
-                
             }
         }else {
             fouten = "U heeft niet alle velden ingevuld"
@@ -125,14 +128,9 @@ class StartMatchViewController: UIViewController{
         }
     }
     
-    @objc func matchScreen(sender: UIButton!){
-        //matchId = sender.tag
-        self.performSegue(withIdentifier: "startMatchSegue", sender: self)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let matchViewController = segue.destination as? MatchViewController else { return }
-        matchViewController.id = "matchId"
+        matchViewController.id = matchid
     }
 
 }

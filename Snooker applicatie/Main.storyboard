@@ -215,9 +215,6 @@
                                 <state key="normal" title="Start Match">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="btnStartMatchTapped:" destination="d3v-mW-ArQ" eventType="touchUpInside" id="mCf-Aa-1D1"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tegenstander:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zH-Hv-guq">
                                 <rect key="frame" x="127" y="239" width="110" height="21"/>
@@ -266,7 +263,7 @@
                         <viewLayoutGuide key="safeArea" id="y7I-eg-GZd"/>
                     </view>
                     <connections>
-                        <outlet property="btnStartMatch" destination="x5G-Nx-1QO" id="w5x-ll-aVA"/>
+                        <outlet property="btnStartMatch" destination="x5G-Nx-1QO" id="BqM-hW-nFx"/>
                         <outlet property="txtFramesToPlay" destination="xam-Em-Xxy" id="pch-xv-z9O"/>
                         <outlet property="txtOpponent" destination="WEu-ux-B9e" id="nwh-pL-yxg"/>
                         <outlet property="txtSaveBreakFrom" destination="0IS-bC-Ktg" id="s15-aa-E7b"/>
