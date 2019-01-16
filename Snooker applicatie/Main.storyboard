@@ -298,18 +298,122 @@
                                 <state key="normal" title="Einde frame">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="baY-ze-jUx" kind="show" identifier="" id="7gj-s7-Y8A"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wedstrijd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-Hf-XQN">
+                                <rect key="frame" x="126" y="165" width="163" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTX-HB-b6U">
+                                <rect key="frame" x="239" y="327" width="151" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRs-MG-Ejb">
+                                <rect key="frame" x="75" y="388.5" width="25" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5k-Iy-hMC">
+                                <rect key="frame" x="302" y="388.5" width="25" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-Cs-26p">
+                                <rect key="frame" x="145" y="402" width="115" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="KZ3-c5-yvl"/>
+                                    <constraint firstAttribute="width" constant="115" id="Zef-H7-V1I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Punten gescoord:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XND-dD-Ypm">
+                                <rect key="frame" x="29" y="523" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Punten gescoord:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mby-pr-nV6">
+                                <rect key="frame" x="250" y="523" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asH-cl-4T3">
+                                <rect key="frame" x="29" y="552" width="136" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nr3-GI-XMj">
+                                <rect key="frame" x="250" y="551" width="136" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeC-A5-cNg">
+                                <rect key="frame" x="39" y="608" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Score toevoegen">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMu-Kb-LsH">
+                                <rect key="frame" x="260" y="608" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Score toevoegen">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-D4-PXE">
+                                <rect key="frame" x="12" y="327" width="151" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pzg-Cs-26p" firstAttribute="top" secondItem="t5j-Fa-ueU" secondAttribute="top" constant="402" id="Tev-bA-Kek"/>
+                            <constraint firstItem="Pzg-Cs-26p" firstAttribute="leading" secondItem="eRs-MG-Ejb" secondAttribute="trailing" constant="45" id="ayc-dW-Fqt"/>
+                            <constraint firstItem="Pzg-Cs-26p" firstAttribute="leading" secondItem="t5j-Fa-ueU" secondAttribute="leading" constant="145" id="f8N-wt-uzK"/>
+                            <constraint firstItem="q5k-Iy-hMC" firstAttribute="leading" secondItem="Pzg-Cs-26p" secondAttribute="trailing" constant="42" id="n3l-h9-Wu8"/>
+                            <constraint firstItem="Pzg-Cs-26p" firstAttribute="centerY" secondItem="eRs-MG-Ejb" secondAttribute="centerY" id="nk2-1y-4ZW"/>
+                            <constraint firstItem="Pzg-Cs-26p" firstAttribute="centerY" secondItem="q5k-Iy-hMC" secondAttribute="centerY" id="vY3-tA-7CG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JwK-82-Hf6"/>
                     </view>
                     <connections>
+                        <outlet property="btnAddScorePlayer1" destination="NeC-A5-cNg" id="fN9-FJ-cnB"/>
+                        <outlet property="btnAddScorePlayer2" destination="yMu-Kb-LsH" id="pO9-By-lhV"/>
+                        <outlet property="btnEndFrame" destination="4iw-Tx-Z6C" id="x24-6N-D78"/>
+                        <outlet property="btnEndMatch" destination="I1y-sw-FOL" id="yWj-tM-95k"/>
+                        <outlet property="lblFramesPlayed" destination="Pzg-Cs-26p" id="jai-FO-ET6"/>
+                        <outlet property="lblPlayer1" destination="I0e-D4-PXE" id="KVl-o5-SYm"/>
+                        <outlet property="lblPlayer2" destination="RTX-HB-b6U" id="SHd-5d-ItF"/>
+                        <outlet property="view" destination="t5j-Fa-ueU" id="NwD-gp-uKy"/>
                         <segue destination="qqy-Jh-wjP" kind="show" identifier="endMatchSegue" id="UnW-Wk-kN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghS-Tb-jqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="1602"/>
+            <point key="canvasLocation" x="989.85507246376824" y="1601.7857142857142"/>
         </scene>
         <!--Overview View Controller-->
         <scene sceneID="NpQ-aK-hhv">
@@ -782,7 +886,6 @@
         <image name="Snooker_triangle" width="2000" height="1790"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Ci-KX-ue8"/>
         <segue reference="G90-JL-Z1X"/>
         <segue reference="evB-Tb-Imp"/>
         <segue reference="W64-uX-L5F"/>

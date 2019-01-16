@@ -32,6 +32,7 @@ class StartMatchViewController: UIViewController{
     var fouten: String! = ""
     var dateOfMatch: String! = ""
     var matchid: Int = 0
+    var player: String = ""
     
     @objc func matchScreen(sender: UIButton!){
         fouten = ""
@@ -43,6 +44,7 @@ class StartMatchViewController: UIViewController{
             if let nameUser = name.string {
                 username = nameUser
             }
+            player = username
             
             let identifier = jwt.claim(name: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")
             var id = ""
@@ -139,6 +141,7 @@ class StartMatchViewController: UIViewController{
             matchViewController.saveBreak = Int(txtSaveBreakFrom.text!)
             matchViewController.playedFrames = 1
             matchViewController.dateOfMatch = dateOfMatch
+            matchViewController.player = player
     }
 
 }

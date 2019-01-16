@@ -183,10 +183,10 @@
 				D4158E7A21ECCFEE00A4F89B /* Constants.swift */,
 				D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */,
 				D4F06A8721EDDCA0003FA33F /* ViewMatchController.swift */,
+				D4F2AB8E21EF334700E390D5 /* StartMatchViewController.swift */,
 				D4F06A8921EDDDED003FA33F /* MatchTableViewCell.swift */,
 				D4F06A8B21EE05F4003FA33F /* MatchStatisticViewController.swift */,
 				D4F06A8D21EE1E76003FA33F /* AddBreakViewController.swift */,
-				D4F2AB8E21EF334700E390D5 /* StartMatchViewController.swift */,
 				D4F2AB9021EF349600E390D5 /* MatchViewController.swift */,
 			);
 			path = "Snooker applicatie";
