@@ -26,6 +26,8 @@
 		D4F06A8C21EE05F4003FA33F /* MatchStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F06A8B21EE05F4003FA33F /* MatchStatisticViewController.swift */; };
 		D4F06A8E21EE1E76003FA33F /* AddBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F06A8D21EE1E76003FA33F /* AddBreakViewController.swift */; };
 		D4F06A9021EE417D003FA33F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F06A8F21EE417D003FA33F /* Main.storyboard */; };
+		D4F2AB8F21EF334700E390D5 /* StartMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2AB8E21EF334700E390D5 /* StartMatchViewController.swift */; };
+		D4F2AB9121EF349600E390D5 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2AB9021EF349600E390D5 /* MatchViewController.swift */; };
 		D4F54A8B21EC9EB2003B5404 /* ViewBreakController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */; };
 		D4F54A8F21ECAD00003B5404 /* Breaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8E21ECAD00003B5404 /* Breaks.swift */; };
 		D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */; };
@@ -78,6 +80,8 @@
 		D4F06A8B21EE05F4003FA33F /* MatchStatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatisticViewController.swift; sourceTree = "<group>"; };
 		D4F06A8D21EE1E76003FA33F /* AddBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBreakViewController.swift; sourceTree = "<group>"; };
 		D4F06A8F21EE417D003FA33F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D4F2AB8E21EF334700E390D5 /* StartMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMatchViewController.swift; sourceTree = "<group>"; };
+		D4F2AB9021EF349600E390D5 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBreakController.swift; sourceTree = "<group>"; };
 		D4F54A8E21ECAD00003B5404 /* Breaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breaks.swift; sourceTree = "<group>"; };
 		D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreaksTableViewCell.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				D4F06A8921EDDDED003FA33F /* MatchTableViewCell.swift */,
 				D4F06A8B21EE05F4003FA33F /* MatchStatisticViewController.swift */,
 				D4F06A8D21EE1E76003FA33F /* AddBreakViewController.swift */,
+				D4F2AB8E21EF334700E390D5 /* StartMatchViewController.swift */,
+				D4F2AB9021EF349600E390D5 /* MatchViewController.swift */,
 			);
 			path = "Snooker applicatie";
 			sourceTree = "<group>";
@@ -443,10 +449,12 @@
 				D4A8FE5C21E8B58300DD1753 /* ViewController.swift in Sources */,
 				D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */,
 				D4F06A8E21EE1E76003FA33F /* AddBreakViewController.swift in Sources */,
+				D4F2AB9121EF349600E390D5 /* MatchViewController.swift in Sources */,
 				D4A8FE5A21E8B58300DD1753 /* AppDelegate.swift in Sources */,
 				D4F06A8C21EE05F4003FA33F /* MatchStatisticViewController.swift in Sources */,
 				D4F06A8821EDDCA0003FA33F /* ViewMatchController.swift in Sources */,
 				D4158E7B21ECCFEE00A4F89B /* Constants.swift in Sources */,
+				D4F2AB8F21EF334700E390D5 /* StartMatchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,21 +30,8 @@ class AddBreakViewController: UIViewController{
             }
             datebreak = txtViewDate.text!+"T14:00:00"
             changeDateformat()
-            /*let parameters = [
-                "Player": "Dennis",
-                "MomentPlayed": "2019-01-15T14:00:00",
-                "NumberPoints": 180,
-                "Opponent": "Francis",
-                "TypeBreak": "Training"
-                ] as [String : Any]*/
-            
-            print(username)
-            print(txtViewPoints?.text! as Any)
-            print(txtViewOpponent?.text! as Any)
-            print(txtViewTypeBreak?.text as Any)
             datebreak = datebreak+"T14:00:00"
             let dateBreakString = String(datebreak)
-            print(dateBreakString)
             let parameters = [
                 "Player": username,
                 "MomentPlayed": dateBreakString,
