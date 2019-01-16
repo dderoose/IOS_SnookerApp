@@ -12,6 +12,7 @@ import Alamofire
 import JWTDecode
 
 class MatchViewController: UIViewController{
+    var id: String!
     
 
     @IBAction func btnEndMatchTapped(_ sender: Any) {
@@ -19,6 +20,7 @@ class MatchViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(id)
         self.navigationItem.setHidesBackButton(true, animated:true);
     }
 }

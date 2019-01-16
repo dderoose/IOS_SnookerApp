@@ -26,6 +26,7 @@ class StartMatchViewController: UIViewController{
         btnStartMatch.layer.borderWidth = 1
         txtSaveBreakFrom.keyboardType = UIKeyboardType.numberPad
         txtFramesToPlay.keyboardType = UIKeyboardType.numberPad
+        btnStartMatch.addTarget(self, action: #selector(matchScreen(sender:)), for: .touchUpInside)
     }
     
     var fouten: String! = ""
@@ -69,7 +70,7 @@ class StartMatchViewController: UIViewController{
             Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches", method: .post,parameters: parameters).responseJSON { (response) -> Void in
                 if let statuscode = response.response?.statusCode{
                     if(statuscode == 201){
-                        self.performSegue(withIdentifier: "startMatchSegue", sender: self)
+
                     } else{
                         let errorss = response.description
                         let errorsplit = errorss.components(separatedBy: "\"")
@@ -122,6 +123,16 @@ class StartMatchViewController: UIViewController{
                 toastLabel.removeFromSuperview()
             })
         }
+    }
+    
+    @objc func matchScreen(sender: UIButton!){
+        //matchId = sender.tag
+        self.performSegue(withIdentifier: "startMatchSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let matchViewController = segue.destination as? MatchViewController else { return }
+        matchViewController.id = "matchId"
     }
 
 }
