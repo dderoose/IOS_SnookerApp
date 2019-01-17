@@ -109,7 +109,7 @@ class ViewMatchController: UITableViewController{
         framesWonPlayer1 = (matches["NumberMatchesWonPlayer1"] as! Int)
         framesWonPlayer2 = (matches["NumberMatchesWonPlayer2"] as! Int)
         saveBreak = (matches["OpslaanBreak"] as! Int)
-        cell.btnMatchstatistic.tag = indexPath.row
+        cell.btnMatchstatistic.tag = matches["MatchId"] as! Int
         cell.btnMatchstatistic.addTarget(self, action: #selector(nextScreen(sender:)), for: .touchUpInside)
         
         return cell
@@ -121,18 +121,20 @@ class ViewMatchController: UITableViewController{
     var framesWonPlayer1: Int! = 0
     var framesWonPlayer2: Int! = 0
     var saveBreak: Int! = 0
+    
     @objc func nextScreen(sender: UIButton!){
+        matchId = sender.tag
         self.performSegue(withIdentifier: "matchStatisticSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let matchStatisticViewController = segue.destination as? MatchStatisticViewController else { return }
         matchStatisticViewController.matchId = matchId
-        matchStatisticViewController.player1 = player1
+        /*matchStatisticViewController.player1 = player1
         matchStatisticViewController.opponent = opponent
         matchStatisticViewController.framesWonPlayer1 = framesWonPlayer1
         matchStatisticViewController.framesWonPlayer2 = framesWonPlayer2
-        matchStatisticViewController.saveBreak = saveBreak
+        matchStatisticViewController.saveBreak = saveBreak*/
     }
 }
 

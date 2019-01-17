@@ -30,6 +30,7 @@
 		D4F2AB9121EF349600E390D5 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2AB9021EF349600E390D5 /* MatchViewController.swift */; };
 		D4F54A8B21EC9EB2003B5404 /* ViewBreakController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */; };
 		D4F54A8F21ECAD00003B5404 /* Breaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F54A8E21ECAD00003B5404 /* Breaks.swift */; };
+		D4F5C7C821F0A8BD0001F4C1 /* FrameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5C7C721F0A8BD0001F4C1 /* FrameTableViewCell.swift */; };
 		D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */; };
 		E25446DD83EEB59CC987AA53 /* Pods_Snooker_applicatie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18FF93CC53DE3559B531554 /* Pods_Snooker_applicatie.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		D4F2AB9021EF349600E390D5 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		D4F54A8A21EC9EB2003B5404 /* ViewBreakController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBreakController.swift; sourceTree = "<group>"; };
 		D4F54A8E21ECAD00003B5404 /* Breaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breaks.swift; sourceTree = "<group>"; };
+		D4F5C7C721F0A8BD0001F4C1 /* FrameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameTableViewCell.swift; sourceTree = "<group>"; };
 		D4FE9BAC21ED320500D6390A /* BreaksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreaksTableViewCell.swift; sourceTree = "<group>"; };
 		E8592391CA6940D399D71905 /* Pods-Snooker applicatieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snooker applicatieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snooker applicatieUITests/Pods-Snooker applicatieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EA5BAFFFF143ED1C57C8168A /* Pods-Snooker applicatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snooker applicatie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snooker applicatie/Pods-Snooker applicatie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				D4F06A8B21EE05F4003FA33F /* MatchStatisticViewController.swift */,
 				D4F06A8D21EE1E76003FA33F /* AddBreakViewController.swift */,
 				D4F2AB9021EF349600E390D5 /* MatchViewController.swift */,
+				D4F5C7C721F0A8BD0001F4C1 /* FrameTableViewCell.swift */,
 			);
 			path = "Snooker applicatie";
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F06A8A21EDDDED003FA33F /* MatchTableViewCell.swift in Sources */,
+				D4F5C7C821F0A8BD0001F4C1 /* FrameTableViewCell.swift in Sources */,
 				D4F54A8B21EC9EB2003B5404 /* ViewBreakController.swift in Sources */,
 				D4A8FEC621E8E3DD00DD1753 /* User.swift in Sources */,
 				D4F54A8F21ECAD00003B5404 /* Breaks.swift in Sources */,
