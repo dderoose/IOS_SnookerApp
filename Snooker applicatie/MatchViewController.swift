@@ -247,9 +247,9 @@ class MatchViewController: UIViewController{
                 
             }
         }
-        
-        
-        
+        if(self.bestOf == 1) {
+            btnEndFrame.isHidden = true
+        }
     }
     
     @IBAction func btnAddScorePlayer1Tapped(_ sender: Any) {
