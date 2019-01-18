@@ -210,6 +210,7 @@ class MatchViewController: UIViewController{
             "Winner": "",
             "MatchId": matchId
             ] as [String : Any]
+        
         Alamofire.request("http://backendapplications.azurewebsites.net/api/Frames", method: .post,parameters: parameters).responseJSON { (response) -> Void in
             if let statuscode = response.response?.statusCode{
                 if(statuscode == 201){
@@ -491,6 +492,7 @@ class MatchViewController: UIViewController{
             "Winner": "",
             "MatchId": matchId
             ] as [String : Any]
+        
         Alamofire.request("http://backendapplications.azurewebsites.net/api/Frames", method: .post,parameters: parameters).responseJSON { (response) -> Void in
             if let statuscode = response.response?.statusCode{
                 if(statuscode == 201){

@@ -69,6 +69,51 @@ class StartMatchViewController: UIViewController{
                 "OpslaanBreak": Int((txtSaveBreakFrom?.text)!) ?? 0,
                 "UserId": id
                 ] as [String : Any]
+            
+            
+            Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches", method: .post,parameters: parameters).responseObject { (response: DataResponse<Match>) in
+                if let statuscode = response.response?.statusCode{
+                    if(statuscode == 201){
+                        let match = response.result.value!
+                        self.matchid = match.matchId
+                        self.dateOfMatch = match.dateOfMatch
+                        self.performSegue(withIdentifier: "startMatchSegue", sender: self)
+                        
+                    } else{
+                        let errorss = response.description
+                        let errorsplit = errorss.components(separatedBy: "\"")
+                        var errorMerge = ""
+                        for i in stride(from: 9, to: errorsplit.count, by: 4) {
+                            errorMerge = errorMerge + errorsplit[i]
+                        }
+                        
+                        
+                        let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100, width: (self.view.frame.width - 10), height: 70))
+                        toastLabel.numberOfLines = 2
+                        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                        toastLabel.textColor = UIColor.white
+                        toastLabel.textAlignment = .center;
+                        toastLabel.font = UIFont(name: "Montserrat-Light", size: 10.0)
+                        toastLabel.text = errorMerge
+                        toastLabel.alpha = 1.0
+                        toastLabel.layer.cornerRadius = 10;
+                        toastLabel.clipsToBounds  =  true
+                        self.view.addSubview(toastLabel)
+                        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+                            toastLabel.alpha = 0.0
+                        }, completion: {(isCompleted) in
+                            toastLabel.removeFromSuperview()
+                        })
+                    }
+                    
+                }
+                /*self.arrayMatches = response.result.value!
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }*/
+            }
+            
+            /*
             Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches", method: .post,parameters: parameters).responseJSON { (response) -> Void in
                 if let statuscode = response.response?.statusCode{
                     if(statuscode == 201){
@@ -108,7 +153,7 @@ class StartMatchViewController: UIViewController{
                     }
                     
                 }
-            }
+            }*/
         }else {
             fouten = "U heeft niet alle velden ingevuld"
         }

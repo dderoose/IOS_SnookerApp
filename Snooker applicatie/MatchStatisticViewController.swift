@@ -6,8 +6,13 @@
 //  Copyright © 2019 Dennis Deroose. All rights reserved.
 //
 
+
 import Foundation
+import UIKit
 import Alamofire
+import JWTDecode
+import AlamofireObjectMapper
+
 
 class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var matchId: Int!
@@ -29,7 +34,27 @@ class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/\(matchId!)").responseData { response in
+        
+        Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/\(matchId!)").responseObject { (response: DataResponse<Match>) in
+            let match = response.result.value!
+            self.framesWonPlayer1 = match.numberOfMatchesWonPlayer1
+            self.framesWonPlayer2 = match.numberOfMatchesWonPlayer2
+            self.player1 = match.player
+            self.opponent = match.opponent
+            self.saveBreak = match.opslaanBreak
+            let totalFramesPlayed = self.framesWonPlayer1+self.framesWonPlayer2
+            self.lblPlayer1.numberOfLines = 0
+            self.lblPlayer2.numberOfLines = 0
+            self.lblNumberFramesPlayed.numberOfLines = 0
+            
+            self.lblPlayer1.text = self.player1!
+            self.lblPlayer2.text = self.opponent!
+            self.lblFramesWonPlayer1.text = String(self.framesWonPlayer1!)
+            self.lblFramesWonPlayer2.text = String(self.framesWonPlayer2!)
+            self.lblNumberFramesPlayed.text = "Frames: "+String(totalFramesPlayed)
+        }
+        
+        /*Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/\(matchId!)").responseData { response in
             if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
                 let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
                 var _: NSError?
@@ -54,8 +79,16 @@ class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITab
                  print(error.localizedDescription)
                  }
             }
-        }
+        }*/
         
+        Alamofire.request("http://backendapplications.azurewebsites.net/api/Frames/matchid/\(matchId!)").responseArray { (response: DataResponse<[Frame]>) in
+            
+            self.arrayFrames = response.result.value!
+            DispatchQueue.main.async {
+                self.tblViewFrame.reloadData()
+            }
+        }
+        /*
         Alamofire.request("http://backendapplications.azurewebsites.net/api/Frames/matchid/\(matchId!)").responseData { response in
             if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
                 let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
@@ -73,7 +106,7 @@ class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITab
                     print(error.localizedDescription)
                 }
             }
-        }
+        }*/
         tblViewFrame.delegate = self
         tblViewFrame.dataSource = self
     }
@@ -95,28 +128,28 @@ class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITab
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FrameTableViewCell  else {
             fatalError("The dequeued cell is not an instance of BreaksTableViewCell.")
         }        // Fetches the appropriate meal for the data source layout.
-        let frame = self.arrayFrames[indexPath.row] as! NSDictionary
-        let arrayBreaks = (frame["Breaks"] as! NSArray) as Array
+        let frame = self.arrayFrames[indexPath.row] as! Frame
+        let arrayBreaks = (frame.breaks)
         var breaksPlayer1: String! = ""
         var breaksPlayer2: String! = ""
-        for pointBreak in arrayBreaks {
+        for pointBreak in arrayBreaks! {
             //if(breaks == ""){
-            if((pointBreak["Player"] as! String) == player1) {
+            if(pointBreak.player! == player1) {
                 if(breaksPlayer1 == ""){
-                    breaksPlayer1 = breaksPlayer1+String(pointBreak["NumberPoints"] as! Int)
+                    breaksPlayer1 = breaksPlayer1+String(pointBreak.numberPoints!)
                 } else {
-                    breaksPlayer1 = breaksPlayer1+","+String(pointBreak["NumberPoints"] as! Int)
+                    breaksPlayer1 = breaksPlayer1+","+String(pointBreak.numberPoints!)
                 }
             } else {
                 if(breaksPlayer2 == ""){
-                    breaksPlayer2 = breaksPlayer2+String(pointBreak["NumberPoints"] as! Int)
+                    breaksPlayer2 = breaksPlayer2+String(pointBreak.numberPoints!)
                 } else {
-                    breaksPlayer2 = breaksPlayer2+","+String(pointBreak["NumberPoints"] as! Int)
+                    breaksPlayer2 = breaksPlayer2+","+String(pointBreak.numberPoints!)
                 }
             }
         }
-        cell.lblPointsPlayer1.text = String(frame["PointsWinner"] as! Int)
-        cell.lblPointsPlayer2.text = String(frame["PointsOpponent"] as! Int)
+        cell.lblPointsPlayer1.text = String(frame.pointsWinner!)
+        cell.lblPointsPlayer2.text = String(frame.pointsOpponent!)
         cell.lblFrameNumber.text = String(indexPath.row+1)
         cell.lblBreaksPlayer1.text = breaksPlayer1!
         cell.lblBreaksPlayer2.text = breaksPlayer2!

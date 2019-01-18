@@ -26,6 +26,16 @@ class ViewMatchController: UITableViewController{
         if let idUser = name.string {
             id = idUser
         }
+        
+        Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/userid/\(id)").responseArray { (response: DataResponse<[Match]>) in
+            
+            self.arrayMatches = response.result.value!
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        /*
         Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/userid/\(id)").responseData { response in
             if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
                 let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
@@ -43,7 +53,7 @@ class ViewMatchController: UITableViewController{
                     print(error.localizedDescription)
                 }
             }
-        }
+        }*/
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,53 +73,55 @@ class ViewMatchController: UITableViewController{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MatchTableViewCell  else {
             fatalError("The dequeued cell is not an instance of MatchTableViewCell.")
         }        // Fetches the appropriate meal for the data source layout.
-        let matches = self.arrayMatches[indexPath.row] as! NSDictionary
+        //let breaks = self.arrayBreaks[indexPath.row] as! Breaks
+        //cell.namebreak.text = (breaks.player)
+        let match = self.arrayMatches[indexPath.row] as! Match
         
-        cell.playersOfMatch.text = (matches["Player"] as! String) + " tegen " + (matches["Opponent"] as! String)
+        cell.playersOfMatch.text = (match.player!) + " tegen " + (match.opponent!)
         
-        let numberLetters = (matches["DateOfMatch"] as! String).count
+        let numberLetters = (match.dateOfMatch)!.count
         let dateFormatter = DateFormatter()
         if(numberLetters == 19){
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: matches["DateOfMatch"] as! String)!
+            let date = dateFormatter.date(from: (match.dateOfMatch!))
             dateFormatter.dateFormat = "dd-MM-yyyy"
-            cell.dateOfMatch.text = dateFormatter.string(from: date)
+            cell.dateOfMatch.text = dateFormatter.string(from: date!)
         } else if(numberLetters == 23) {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: matches["DateOfMatch"] as! String)!
+            let date = dateFormatter.date(from: (match.dateOfMatch!))
             dateFormatter.dateFormat = "dd-MM-yyyy"
-            cell.dateOfMatch.text = dateFormatter.string(from: date)
+            cell.dateOfMatch.text = dateFormatter.string(from: date!)
         } else if(numberLetters == 22){
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SS"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: matches["DateOfMatch"] as! String)!
+            let date = dateFormatter.date(from: (match.dateOfMatch!))
             dateFormatter.dateFormat = "dd-MM-yyyy"
-            cell.dateOfMatch.text = dateFormatter.string(from: date)
+            cell.dateOfMatch.text = dateFormatter.string(from: date!)
         } else if(numberLetters == 21){
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.S"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: matches["DateOfMatch"] as! String)!
+            let date = dateFormatter.date(from: (match.dateOfMatch!))
             dateFormatter.dateFormat = "dd-MM-yyyy"
-            cell.dateOfMatch.text = dateFormatter.string(from: date)
+            cell.dateOfMatch.text = dateFormatter.string(from: date!)
         } else {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: matches["DateOfMatch"] as! String)!
+            let date = dateFormatter.date(from: (match.dateOfMatch!))
             dateFormatter.dateFormat = "dd-MM-yyyy"
-            cell.dateOfMatch.text = dateFormatter.string(from: date)
+            cell.dateOfMatch.text = dateFormatter.string(from: date!)
         }
         
         cell.lblResult.text = "Uitslag"
-        cell.lblResultMatch.text = String(matches["NumberMatchesWonPlayer1"] as! Int)  + ":" + String(matches["NumberMatchesWonPlayer2"] as! Int)
-        matchId = matches["MatchId"] as! Int
-        player1 = (matches["Player"] as! String)
-        opponent = (matches["Opponent"] as! String)
-        framesWonPlayer1 = (matches["NumberMatchesWonPlayer1"] as! Int)
-        framesWonPlayer2 = (matches["NumberMatchesWonPlayer2"] as! Int)
-        saveBreak = (matches["OpslaanBreak"] as! Int)
-        cell.btnMatchstatistic.tag = matches["MatchId"] as! Int
+        cell.lblResultMatch.text = String(match.numberOfMatchesWonPlayer1!)  + ":" + String(match.numberOfMatchesWonPlayer2!)
+        matchId = match.matchId!
+        player1 = match.player
+        opponent = match.opponent
+        framesWonPlayer1 = match.numberOfMatchesWonPlayer1
+        framesWonPlayer2 = match.numberOfMatchesWonPlayer2
+        saveBreak = match.opslaanBreak
+        cell.btnMatchstatistic.tag = match.matchId!
         cell.btnMatchstatistic.addTarget(self, action: #selector(nextScreen(sender:)), for: .touchUpInside)
         
         return cell
@@ -130,11 +142,6 @@ class ViewMatchController: UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let matchStatisticViewController = segue.destination as? MatchStatisticViewController else { return }
         matchStatisticViewController.matchId = matchId
-        /*matchStatisticViewController.player1 = player1
-        matchStatisticViewController.opponent = opponent
-        matchStatisticViewController.framesWonPlayer1 = framesWonPlayer1
-        matchStatisticViewController.framesWonPlayer2 = framesWonPlayer2
-        matchStatisticViewController.saveBreak = saveBreak*/
     }
 }
 

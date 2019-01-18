@@ -10,6 +10,8 @@
 		444C7C2436D2C4CFFBD71C15 /* Pods_Snooker_applicatieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F31C0AA918E054B133650EF3 /* Pods_Snooker_applicatieUITests.framework */; };
 		D2A0B6BC51C8AF2070A0BED1 /* Pods_Snooker_applicatieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B69AD441D3712766F7E3443 /* Pods_Snooker_applicatieTests.framework */; };
 		D4158E7B21ECCFEE00A4F89B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4158E7A21ECCFEE00A4F89B /* Constants.swift */; };
+		D4849BCF21F282300045E147 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4849BCD21F282300045E147 /* Frame.swift */; };
+		D4849BD021F282300045E147 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4849BCE21F282300045E147 /* Match.swift */; };
 		D4A8FE5A21E8B58300DD1753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FE5921E8B58300DD1753 /* AppDelegate.swift */; };
 		D4A8FE5C21E8B58300DD1753 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8FE5B21E8B58300DD1753 /* ViewController.swift */; };
 		D4A8FE6121E8B58400DD1753 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4A8FE6021E8B58400DD1753 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		6B69AD441D3712766F7E3443 /* Pods_Snooker_applicatieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snooker_applicatieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE68DA3849235385B5F84C22 /* Pods-Snooker applicatieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snooker applicatieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snooker applicatieTests/Pods-Snooker applicatieTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4158E7A21ECCFEE00A4F89B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D4849BCD21F282300045E147 /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		D4849BCE21F282300045E147 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		D4A8FE5621E8B58300DD1753 /* Snooker applicatie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snooker applicatie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A8FE5921E8B58300DD1753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4A8FE5B21E8B58300DD1753 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 		D4A8FE5821E8B58300DD1753 /* Snooker applicatie */ = {
 			isa = PBXGroup;
 			children = (
+				D4849BCD21F282300045E147 /* Frame.swift */,
+				D4849BCE21F282300045E147 /* Match.swift */,
 				D4F06A8F21EE417D003FA33F /* Main.storyboard */,
 				D4A8FEC321E8E38A00DD1753 /* Models */,
 				D4A8FE5921E8B58300DD1753 /* AppDelegate.swift */,
@@ -456,7 +462,9 @@
 				D4C742F221E904020010F09E /* OverviewViewController.swift in Sources */,
 				D4A8FE5C21E8B58300DD1753 /* ViewController.swift in Sources */,
 				D4FE9BAD21ED320500D6390A /* BreaksTableViewCell.swift in Sources */,
+				D4849BCF21F282300045E147 /* Frame.swift in Sources */,
 				D4F06A8E21EE1E76003FA33F /* AddBreakViewController.swift in Sources */,
+				D4849BD021F282300045E147 /* Match.swift in Sources */,
 				D4F2AB9121EF349600E390D5 /* MatchViewController.swift in Sources */,
 				D4A8FE5A21E8B58300DD1753 /* AppDelegate.swift in Sources */,
 				D4F06A8C21EE05F4003FA33F /* MatchStatisticViewController.swift in Sources */,
