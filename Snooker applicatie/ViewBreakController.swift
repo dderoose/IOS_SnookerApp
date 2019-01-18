@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import JWTDecode
+import AlamofireObjectMapper
 
 
 class ViewBreakController: UITableViewController {
@@ -24,6 +25,14 @@ class ViewBreakController: UITableViewController {
             username = nameUser
         }
         
+        Alamofire.request("http://backendapplications.azurewebsites.net/api/Breaks/userid/\(username)").responseArray { (response: DataResponse<[Breaks]>) in
+            
+            self.arrayBreaks = response.result.value!
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        /*
         Alamofire.request("http://backendapplications.azurewebsites.net/api/Breaks/userid/\(username)").responseData { response in
             if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
                 let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
@@ -41,7 +50,7 @@ class ViewBreakController: UITableViewController {
                     print(error.localizedDescription)
                 }
             }
-        }
+        }*/
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,44 +70,43 @@ class ViewBreakController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? BreaksTableViewCell  else {
             fatalError("The dequeued cell is not an instance of BreaksTableViewCell.")
         }        // Fetches the appropriate meal for the data source layout.
-        let breaks = self.arrayBreaks[indexPath.row] as! NSDictionary
+        let breaks = self.arrayBreaks[indexPath.row] as! Breaks
+        cell.namebreak.text = (breaks.player)
         
-        cell.namebreak.text = (breaks["Player"] as! String)
-        
-        let numberLetters = (breaks["MomentPlayed"] as! String).count
+        let numberLetters = (breaks.momentPlayed)!.count
         let dateFormatter = DateFormatter()
         if(numberLetters == 19){
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: breaks["MomentPlayed"] as! String)!
+            let date = dateFormatter.date(from: (breaks.momentPlayed!))
             dateFormatter.dateFormat = "dd-MM-yyyy"
-            cell.dateBreak.text = dateFormatter.string(from: date)
+            cell.dateBreak.text = dateFormatter.string(from: date!)
         } else if(numberLetters == 23) {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: breaks["MomentPlayed"] as! String)!
+            let date = dateFormatter.date(from: (breaks.momentPlayed!))!
             dateFormatter.dateFormat = "dd-MM-yyyy"
             cell.dateBreak.text = dateFormatter.string(from: date)
         } else if(numberLetters == 22){
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SS"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: breaks["MomentPlayed"] as! String)!
+            let date = dateFormatter.date(from: (breaks.momentPlayed!))!
             dateFormatter.dateFormat = "dd-MM-yyyy"
             cell.dateBreak.text = dateFormatter.string(from: date)
         } else if(numberLetters == 21){
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.S"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: breaks["MomentPlayed"] as! String)!
+            let date = dateFormatter.date(from: (breaks.momentPlayed!))!
             dateFormatter.dateFormat = "dd-MM-yyyy"
             cell.dateBreak.text = dateFormatter.string(from: date)
         } else {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateFormatter.date(from: breaks["MomentPlayed"] as! String)!
+            let date = dateFormatter.date(from: (breaks.momentPlayed!))!
             dateFormatter.dateFormat = "dd-MM-yyyy"
             cell.dateBreak.text = dateFormatter.string(from: date)
         }
-        cell.pointsBreak.text = String(breaks["NumberPoints"] as! Int)
+        cell.pointsBreak.text = String(breaks.numberPoints!)
         
         
         return cell

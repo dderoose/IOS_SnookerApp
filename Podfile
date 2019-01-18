@@ -6,6 +6,7 @@ target 'Snooker applicatie' do
   use_frameworks!
 	pod 'Alamofire', '~> 4.0'
     pod 'JWTDecode', '~> 2.2'
+    pod 'AlamofireObjectMapper', '~> 5.2'
 
   # Pods for Snooker applicatie
 

@@ -7,7 +7,9 @@
 //
 
 import Foundation
-class Breaks: NSObject {
+import ObjectMapper
+
+class Breaks: Mappable {
     
     //properties
     var breakId: Int? = 0
@@ -17,26 +19,19 @@ class Breaks: NSObject {
     var opponent: String? = ""
     var typeBreak: String? = ""
     var frameId: Int? = 0
-    
-    
-    //empty constructor
-    
-    override init()
-    {
-        
+
+    func mapping(map: Map) {
+        breakId <- map["BreakId"]
+        player <- map["Player"]
+        momentPlayed <- map["MomentPlayed"]
+        numberPoints <- map["NumberPoints"]
+        opponent <- map["Opponent"]
+        typeBreak <- map["TypeBreak"]
+        frameId <- map["FrameId"]
     }
     
-    //construct with @username, @email, @password, and @confirmPassword parameters
-    
-    init(breakId:Int, player: String, momentPlayed: String, numberPoints: Int, opponent: String,typeBreak: String, frameId: Int?) {
-        
-        self.breakId = breakId
-        self.player = player
-        self.momentPlayed = momentPlayed
-        self.numberPoints = numberPoints
-        self.opponent = opponent
-        self.typeBreak = typeBreak
-        self.frameId = frameId
+    required init?(map: Map) {
         
     }
+
 }
