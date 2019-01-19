@@ -11,6 +11,8 @@ import UIKit
 import Alamofire
 import JWTDecode
 
+
+//This is the controller to play a match
 class MatchViewController: UIViewController{
     var matchId: Int!
     var opponent: String!
@@ -23,7 +25,7 @@ class MatchViewController: UIViewController{
     var frameId: Int!
     var framesWonPlayer1: Int! = 0
     var framesWonPlayer2: Int! = 0
-
+    
     @IBOutlet weak var btnAddScorePlayer1: UIButton!
     @IBOutlet weak var lblPlayer1: UILabel!
     @IBOutlet weak var lblPlayer2: UILabel!
@@ -35,6 +37,11 @@ class MatchViewController: UIViewController{
     @IBOutlet weak var btnAddScorePlayer2: UIButton!
     @IBOutlet weak var btnEndFrame: UIButton!
     @IBOutlet weak var btnEndMatch: UIButton!
+    
+    /*
+     When the endmatch is tapped it first looks who has the most points and then he updates the frame
+     and the match.
+     */
     @IBAction func btnEndMatchTapped(_ sender: Any) {
         if(Int(lblScorePlayer1.text!)! >= Int(lblScorePlayer2.text!)!){
             framesWonPlayer1 = framesWonPlayer1+1
@@ -175,6 +182,11 @@ class MatchViewController: UIViewController{
             }
         }
     }
+    
+    /*
+     Here it fills in the labels with the values that you got from the startmatch.
+     It also set the style of the buttons and creates a frame for the match
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         let navigationBarAppearace = UINavigationBar.appearance()
@@ -252,6 +264,11 @@ class MatchViewController: UIViewController{
         }
     }
     
+    /*
+     This call adds the points to the total points.
+     First it looks if the points are higher then the value from how much points it can save the break.
+     If it is higher than it saves the break otherwise it adds the points to the total points.
+     */
     @IBAction func btnAddScorePlayer1Tapped(_ sender: Any) {
         if(txtAddScorePlayer1.text != ""){
             if(Int(txtAddScorePlayer1.text!)! >= saveBreak) {
@@ -323,53 +340,55 @@ class MatchViewController: UIViewController{
         }
     }
     
+    
+    //The same as the call above.
     @IBAction func btnAddScorePlayer2Tapped(_ sender: Any) {
         if(txtAddScorePlayer2.text != ""){
             if(Int(txtAddScorePlayer2.text!)! >= saveBreak) {
-            let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-            let result = formatter.string(from: date)
-            let parameters = [
-                "BreakId": 80,
-                "Player": opponent!,
-                "MomentPlayed": result,
-                "NumberPoints": Int(txtAddScorePlayer2.text!)!,
-                "Opponent": player!,
-                "TypeBreak": "Match",
-                "FrameId": frameId
-                ] as [String : Any]
-            Alamofire.request("http://backendapplications.azurewebsites.net/api/Breaks", method: .post,parameters: parameters).responseJSON { (response) -> Void in
-                if let statuscode = response.response?.statusCode{
-                    if(statuscode == 201){
-                        
-                    } else{
-                        let errorss = response.description
-                        let errorsplit = errorss.components(separatedBy: "\"")
-                        var errorMerge = ""
-                        for i in stride(from: 9, to: errorsplit.count, by: 4) {
-                            errorMerge = errorMerge + errorsplit[i]
+                let date = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                let result = formatter.string(from: date)
+                let parameters = [
+                    "BreakId": 80,
+                    "Player": opponent!,
+                    "MomentPlayed": result,
+                    "NumberPoints": Int(txtAddScorePlayer2.text!)!,
+                    "Opponent": player!,
+                    "TypeBreak": "Match",
+                    "FrameId": frameId
+                    ] as [String : Any]
+                Alamofire.request("http://backendapplications.azurewebsites.net/api/Breaks", method: .post,parameters: parameters).responseJSON { (response) -> Void in
+                    if let statuscode = response.response?.statusCode{
+                        if(statuscode == 201){
+                            
+                        } else{
+                            let errorss = response.description
+                            let errorsplit = errorss.components(separatedBy: "\"")
+                            var errorMerge = ""
+                            for i in stride(from: 9, to: errorsplit.count, by: 4) {
+                                errorMerge = errorMerge + errorsplit[i]
+                            }
+                            
+                            
+                            let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100, width: (self.view.frame.width - 10), height: 70))
+                            toastLabel.numberOfLines = 2
+                            toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                            toastLabel.textColor = UIColor.white
+                            toastLabel.textAlignment = .center;
+                            toastLabel.font = UIFont(name: "Montserrat-Light", size: 10.0)
+                            toastLabel.text = errorMerge
+                            toastLabel.alpha = 1.0
+                            toastLabel.layer.cornerRadius = 10;
+                            toastLabel.clipsToBounds  =  true
+                            self.view.addSubview(toastLabel)
+                            UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+                                toastLabel.alpha = 0.0
+                            }, completion: {(isCompleted) in
+                                toastLabel.removeFromSuperview()
+                            })
                         }
-                        
-                        
-                        let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100, width: (self.view.frame.width - 10), height: 70))
-                        toastLabel.numberOfLines = 2
-                        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-                        toastLabel.textColor = UIColor.white
-                        toastLabel.textAlignment = .center;
-                        toastLabel.font = UIFont(name: "Montserrat-Light", size: 10.0)
-                        toastLabel.text = errorMerge
-                        toastLabel.alpha = 1.0
-                        toastLabel.layer.cornerRadius = 10;
-                        toastLabel.clipsToBounds  =  true
-                        self.view.addSubview(toastLabel)
-                        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
-                            toastLabel.alpha = 0.0
-                        }, completion: {(isCompleted) in
-                            toastLabel.removeFromSuperview()
-                        })
                     }
-                }
                 }
             }
             lblScorePlayer2.text = String(Int(lblScorePlayer2.text!)!+Int(txtAddScorePlayer2.text!)!)
@@ -392,8 +411,12 @@ class MatchViewController: UIViewController{
                 toastLabel.removeFromSuperview()
             })
         }
-    
+        
     }
+    
+    /*
+     This is to end the frame it updates the frame and creates a new frame for the following frame.
+     */
     @IBAction func btnEndFrameTapped(_ sender: Any) {
         if(playedFrames+1 >= bestOf){
             btnEndFrame.isHidden = true

@@ -12,10 +12,14 @@ import Alamofire
 import JWTDecode
 import AlamofireObjectMapper
 
-
+//This is a controller for the breaktableview.
 class ViewBreakController: UITableViewController {
     var listBreakss:Array<Breaks> = []
     var arrayBreaks: [AnyObject] = []
+    
+    /*We decode the jwttoken to get the username of the user
+     and we also do a call to get all the breaks
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         let jwt = try! decode(jwt: Constants.token)
@@ -32,36 +36,19 @@ class ViewBreakController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        /*
-        Alamofire.request("http://backendapplications.azurewebsites.net/api/Breaks/userid/\(username)").responseData { response in
-            if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
-                let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
-                var _: NSError?
-                
-                do {
-                    let jsonResult : AnyObject? = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as AnyObject
-                    let breakListArray = (jsonResult as! NSArray) as Array
-                    self.arrayBreaks = breakListArray
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                    
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            }
-        }*/
     }
     
+    //This is to set the numberOfSections in the tableview
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    //This is to know how much rows they need to set in the tableview.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.arrayBreaks.count
     }
     
-    
+    //Here we fill in the cells from a tableviewcell with values from the breakarray
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
@@ -69,7 +56,7 @@ class ViewBreakController: UITableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? BreaksTableViewCell  else {
             fatalError("The dequeued cell is not an instance of BreaksTableViewCell.")
-        }        // Fetches the appropriate meal for the data source layout.
+        }
         let breaks = self.arrayBreaks[indexPath.row] as! Breaks
         cell.namebreak.text = (breaks.player)
         

@@ -14,6 +14,7 @@ import JWTDecode
 import AlamofireObjectMapper
 
 
+//This is the class to see the statistics of a match
 class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var matchId: Int!
     var player1: String!
@@ -31,7 +32,7 @@ class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var lblNumberFramesPlayed: UILabel!
     @IBOutlet weak var tblViewFrame: UITableView!
     
-    
+    //Here we do an api call to get all the data of the specific match
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,33 +55,7 @@ class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITab
             self.lblNumberFramesPlayed.text = "Frames: "+String(totalFramesPlayed)
         }
         
-        /*Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/\(matchId!)").responseData { response in
-            if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
-                let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
-                var _: NSError?
-                 do {
-                 let jsonResult : AnyObject? = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as AnyObject
-                    self.framesWonPlayer1 = (jsonResult!["NumberMatchesWonPlayer1"] as! Int)
-                    self.framesWonPlayer2 = (jsonResult!["NumberMatchesWonPlayer2"] as! Int)
-                    self.player1 = (jsonResult!["Player"] as! String)
-                    self.opponent = (jsonResult!["Opponent"] as! String)
-                    self.saveBreak = (jsonResult!["OpslaanBreak"] as! Int)
-                    let totalFramesPlayed = self.framesWonPlayer1+self.framesWonPlayer2
-                     self.lblPlayer1.numberOfLines = 0
-                     self.lblPlayer2.numberOfLines = 0
-                     self.lblNumberFramesPlayed.numberOfLines = 0
-                     
-                     self.lblPlayer1.text = self.player1!
-                     self.lblPlayer2.text = self.opponent!
-                     self.lblFramesWonPlayer1.text = String(self.framesWonPlayer1!)
-                     self.lblFramesWonPlayer2.text = String(self.framesWonPlayer2!)
-                     self.lblNumberFramesPlayed.text = "Frames: "+String(totalFramesPlayed)
-                 } catch let error as NSError {
-                 print(error.localizedDescription)
-                 }
-            }
-        }*/
-        
+        //Here we do an api call to get all the frames of a match
         Alamofire.request("http://backendapplications.azurewebsites.net/api/Frames/matchid/\(matchId!)").responseArray { (response: DataResponse<[Frame]>) in
             
             self.arrayFrames = response.result.value!
@@ -88,38 +63,21 @@ class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITab
                 self.tblViewFrame.reloadData()
             }
         }
-        /*
-        Alamofire.request("http://backendapplications.azurewebsites.net/api/Frames/matchid/\(matchId!)").responseData { response in
-            if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
-                let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
-                var _: NSError?
-                
-                do {
-                    let jsonResult : AnyObject? = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as AnyObject
-                    let frameListArray = (jsonResult as! NSArray) as Array
-                    self.arrayFrames = frameListArray
-                    DispatchQueue.main.async {
-                        self.tblViewFrame.reloadData()
-                    }
-                    
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            }
-        }*/
         tblViewFrame.delegate = self
         tblViewFrame.dataSource = self
     }
     
+    //This is to set the numberOfSections in the tableview
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    //This is to know how much rows they need to be set in the tableview.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.arrayFrames.count
     }
     
-    
+    //Here we fill in the cells of a tableview with values from the framearray
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
@@ -127,7 +85,7 @@ class MatchStatisticViewController: UIViewController, UITableViewDelegate, UITab
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FrameTableViewCell  else {
             fatalError("The dequeued cell is not an instance of BreaksTableViewCell.")
-        }        // Fetches the appropriate meal for the data source layout.
+        }
         let frame = self.arrayFrames[indexPath.row] as! Frame
         let arrayBreaks = (frame.breaks)
         var breaksPlayer1: String! = ""

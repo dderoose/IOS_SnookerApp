@@ -11,7 +11,8 @@ import UIKit
 import Alamofire
 
 class RegisterViewController: UIViewController {
-
+    
+    //Here we set the keyboard type and we also set the buttons
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,6 +35,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPasswordConfirm: UITextField!
+    
+    /*Here we do an api call when the register button is clicked and when
+     it succeeds then you go back to the login screen and if it fails you get a
+     toast message
+     */
     @IBAction func btnRegisterClicked(_ sender: UIButton) {
         let parameters = [
             "Username": txtUsername?.text ?? "",
@@ -56,7 +62,7 @@ class RegisterViewController: UIViewController {
                     }
                     
                     
-let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100, width: (self.view.frame.width - 10), height: 70))
+                    let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100, width: (self.view.frame.width - 10), height: 70))
                     toastLabel.numberOfLines = 2
                     toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
                     toastLabel.textColor = UIColor.white

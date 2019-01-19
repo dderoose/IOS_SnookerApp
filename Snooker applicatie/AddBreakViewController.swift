@@ -19,6 +19,12 @@ class AddBreakViewController: UIViewController{
     @IBOutlet weak var btnAddBreak: UIButton!
     var fouten: String! = ""
     var datebreak : String! = ""
+    
+    /*
+     If the button to add a break is tapped then we first look if everything is filled in.
+     If not then you get a toastmessage.
+     Otherwise he do an api call to add the break
+     */
     @IBAction func btnAddBreakTapped(_ sender: UIButton) {
         fouten = ""
         if(txtViewPoints.text != "" && txtViewDate.text != "") {
@@ -102,6 +108,7 @@ class AddBreakViewController: UIViewController{
     }
     let datePicker = UIDatePicker()
     
+    //Here we set how the button needs to look like and also the keyboardtype of the points
     override func viewDidLoad() {
         super.viewDidLoad()
         btnAddBreak.backgroundColor = UIColor.lightGray
@@ -138,6 +145,7 @@ class AddBreakViewController: UIViewController{
         self.view.endEditing(true)
     }
     
+    //this is a method to change the date format
     func changeDateformat(){
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date / server String
@@ -150,11 +158,6 @@ class AddBreakViewController: UIViewController{
         formatter.dateFormat = "yyyy-MM-dd"
         // again convert your date to string
         datebreak = formatter.string(from: myDate!)
-        
-        /*let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        datebreak = formatter.string(from: datebreak as! Date)
-        self.view.endEditing(true)*/
     }
     
     

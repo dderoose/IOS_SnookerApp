@@ -8,6 +8,7 @@
 
 import Foundation
 
+//This is to set the token that we use in the app
 struct Constants {
     static var token = ""
 }

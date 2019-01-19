@@ -11,13 +11,16 @@ import UIKit
 import Alamofire
 import JWTDecode
 
-class StartMatchViewController: UIViewController{
 
+//This is the class before we start the match
+class StartMatchViewController: UIViewController{
+    
     @IBOutlet weak var txtOpponent: UITextField!
     @IBOutlet weak var txtFramesToPlay: UITextField!
     @IBOutlet weak var txtSaveBreakFrom: UITextField!
     @IBOutlet weak var btnStartMatch: UIButton!
     
+    //Here we set the button and we add a target on the button
     override func viewDidLoad() {
         super.viewDidLoad()
         btnStartMatch.backgroundColor = UIColor.lightGray
@@ -34,8 +37,17 @@ class StartMatchViewController: UIViewController{
     var matchid: Int! = 0
     var player: String! = ""
     
+    /*
+     This is the function that is called when the button to start a match is called
+     */
     @objc func matchScreen(sender: UIButton!){
         fouten = ""
+        
+        /*
+         Here we look if some textviews are empty if it is than we send a toastmessage
+         otherwise we decode a jwttoken to get the username and to get the id of the user
+         after that we do an api call to create a match
+         */
         if(txtOpponent.text != "" && txtFramesToPlay.text != "" && txtSaveBreakFrom.text != "") {
             let jwt = try! decode(jwt: Constants.token)
             
@@ -107,53 +119,7 @@ class StartMatchViewController: UIViewController{
                     }
                     
                 }
-                /*self.arrayMatches = response.result.value!
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }*/
             }
-            
-            /*
-            Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches", method: .post,parameters: parameters).responseJSON { (response) -> Void in
-                if let statuscode = response.response?.statusCode{
-                    if(statuscode == 201){
-                        let convertedString = String(describing: response.result.value!)
-                        let separatedSpace = convertedString.components(separatedBy: " ")
-                        let separatedPointKomma = separatedSpace[24].components(separatedBy: ";")
-                        let separatedQuote = separatedSpace[6].components(separatedBy: "\"")
-                        self.matchid = Int(separatedPointKomma[0])!
-                        self.dateOfMatch = separatedQuote[1]
-                        self.performSegue(withIdentifier: "startMatchSegue", sender: self)
-                        
-                    } else{
-                        let errorss = response.description
-                        let errorsplit = errorss.components(separatedBy: "\"")
-                        var errorMerge = ""
-                        for i in stride(from: 9, to: errorsplit.count, by: 4) {
-                            errorMerge = errorMerge + errorsplit[i]
-                        }
-                        
-                        
-                        let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100, width: (self.view.frame.width - 10), height: 70))
-                        toastLabel.numberOfLines = 2
-                        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-                        toastLabel.textColor = UIColor.white
-                        toastLabel.textAlignment = .center;
-                        toastLabel.font = UIFont(name: "Montserrat-Light", size: 10.0)
-                        toastLabel.text = errorMerge
-                        toastLabel.alpha = 1.0
-                        toastLabel.layer.cornerRadius = 10;
-                        toastLabel.clipsToBounds  =  true
-                        self.view.addSubview(toastLabel)
-                        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
-                            toastLabel.alpha = 0.0
-                        }, completion: {(isCompleted) in
-                            toastLabel.removeFromSuperview()
-                        })
-                    }
-                    
-                }
-            }*/
         }else {
             fouten = "U heeft niet alle velden ingevuld"
         }
@@ -178,15 +144,16 @@ class StartMatchViewController: UIViewController{
         }
     }
     
+    //Here we set all the values that we use in the matchViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let matchViewController = segue.destination as? MatchViewController else { return }
-            matchViewController.matchId = matchid
-            matchViewController.opponent = txtOpponent!.text!
-            matchViewController.bestOf = Int(txtFramesToPlay.text!)
-            matchViewController.saveBreak = Int(txtSaveBreakFrom.text!)
-            matchViewController.playedFrames = 1
-            matchViewController.dateOfMatch = dateOfMatch
-            matchViewController.player = player
+        matchViewController.matchId = matchid
+        matchViewController.opponent = txtOpponent!.text!
+        matchViewController.bestOf = Int(txtFramesToPlay.text!)
+        matchViewController.saveBreak = Int(txtSaveBreakFrom.text!)
+        matchViewController.playedFrames = 1
+        matchViewController.dateOfMatch = dateOfMatch
+        matchViewController.player = player
     }
-
+    
 }

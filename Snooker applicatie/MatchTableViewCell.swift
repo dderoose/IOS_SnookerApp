@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//Here are the labels and the button of the matchttableviewcell
 class MatchTableViewCell: UITableViewCell {
     
     //MARK: Properties
@@ -17,7 +18,7 @@ class MatchTableViewCell: UITableViewCell {
     @IBOutlet weak var lblResult: UILabel!
     @IBOutlet weak var lblResultMatch: UILabel!
     @IBOutlet weak var btnMatchstatistic: UIButton!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 
+//This is a model class of a match with his values.
 class Match: Mappable {
     
     //properties
@@ -25,6 +26,7 @@ class Match: Mappable {
     var userId: String? = ""
     var frames: [Frame]?
     
+    //this is a map function to map the values from the api call.
     func mapping(map: Map) {
         matchId <- map["MatchId"]
         potSucces <- map["PotSucces"]

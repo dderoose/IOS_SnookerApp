@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class OverviewViewController: UIViewController {
-
+    
+    //here we create the navbar and we also set how the buttons look like
     override func viewDidLoad() {
         super.viewDidLoad()
         OverviewView.layer.zPosition = 0
@@ -22,7 +23,7 @@ class OverviewViewController: UIViewController {
         btnShowBreak.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
         btnAddBreak.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
         btnMatchStatistic.titleEdgeInsets = UIEdgeInsets(top:20,left:20,bottom:20,right:0)
-
+        
         btnPlayMatchOverview.backgroundColor = .clear
         btnPlayMatchOverview.layer.borderColor = UIColor.lightGray.cgColor
         btnPlayMatchOverview.layer.cornerRadius = 5
@@ -71,6 +72,7 @@ class OverviewViewController: UIViewController {
     
     var hamburgerMenuIsVisible = false
     
+    //Here we open and close the navbar when it is tapped
     @IBAction func hamburgerBtnNavTapped(_ sender: Any) {
         if !hamburgerMenuIsVisible{
             NavBarPictureView.isHidden = false
@@ -90,11 +92,12 @@ class OverviewViewController: UIViewController {
             print("The animation is complete!")
         }
     }
+    //This is when you click the logout button that you go back to the login screen
     @IBAction func logoutBtnTapped(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginView")
         self.present(newViewController, animated: true, completion: nil)
-    
+        
     }
-
+    
 }

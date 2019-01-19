@@ -11,15 +11,18 @@ import UIKit
 import Alamofire
 import JWTDecode
 
+//this is the view to see the matchtableview
 class ViewMatchController: UITableViewController{
     
     @IBOutlet var tableMatchView: UITableView!
     var arrayMatches: [AnyObject] = []
+    
+    /* Here we decode the token to get the user his id
+     We do also an api call to get all the matches from a specific user
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         tableMatchView.rowHeight = 60.0
-        
-        //print(Constants.token)
         let jwt = try! decode(jwt: Constants.token)
         let name = jwt.claim(name: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")
         var id = ""
@@ -34,37 +37,19 @@ class ViewMatchController: UITableViewController{
                 self.tableView.reloadData()
             }
         }
-        
-        /*
-        Alamofire.request("http://backendapplications.azurewebsites.net/api/Matches/userid/\(id)").responseData { response in
-            if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
-                let data: NSData = utf8Text.data(using: String.Encoding.utf8)! as NSData
-                var _: NSError?
-                
-                do {
-                    let jsonResult : AnyObject? = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as AnyObject
-                    let matchListArray = (jsonResult as! NSArray) as Array
-                    self.arrayMatches = matchListArray
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                    
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            }
-        }*/
     }
     
+    //This is to set the numberOfSections in the tableview
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    //This is to know how much rows they need to be set in the tableview.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.arrayMatches.count
     }
     
-    
+    //Here we fill in the cells from a tableviewcell with values from the matcharray
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
@@ -72,9 +57,7 @@ class ViewMatchController: UITableViewController{
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MatchTableViewCell  else {
             fatalError("The dequeued cell is not an instance of MatchTableViewCell.")
-        }        // Fetches the appropriate meal for the data source layout.
-        //let breaks = self.arrayBreaks[indexPath.row] as! Breaks
-        //cell.namebreak.text = (breaks.player)
+        }
         let match = self.arrayMatches[indexPath.row] as! Match
         
         cell.playersOfMatch.text = (match.player!) + " tegen " + (match.opponent!)
@@ -134,11 +117,13 @@ class ViewMatchController: UITableViewController{
     var framesWonPlayer2: Int! = 0
     var saveBreak: Int! = 0
     
+    //This is to go to the matchStatistic screen.
     @objc func nextScreen(sender: UIButton!){
         matchId = sender.tag
         self.performSegue(withIdentifier: "matchStatisticSegue", sender: self)
     }
     
+    //This is to set the matchid in the matchStatisticController.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let matchStatisticViewController = segue.destination as? MatchStatisticViewController else { return }
         matchStatisticViewController.matchId = matchId

@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 
+//This is a model class of a break with his values.
 class Breaks: Mappable {
     
     //properties
@@ -19,7 +20,8 @@ class Breaks: Mappable {
     var opponent: String? = ""
     var typeBreak: String? = ""
     var frameId: Int? = 0
-
+    
+    //this is to map the break when you do an api call
     func mapping(map: Map) {
         breakId <- map["BreakId"]
         player <- map["Player"]
@@ -33,5 +35,5 @@ class Breaks: Mappable {
     required init?(map: Map) {
         
     }
-
+    
 }

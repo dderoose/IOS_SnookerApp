@@ -10,10 +10,11 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //This is to set the the buttons
         btnInlog.backgroundColor = .clear
         btnInlog.layer.borderColor = UIColor.lightGray.cgColor
         btnInlog.layer.cornerRadius = 5
@@ -22,22 +23,15 @@ class ViewController: UIViewController {
         btnRegister.layer.borderColor = UIColor.lightGray.cgColor
         btnRegister.layer.cornerRadius = 5
         btnRegister.layer.borderWidth = 1
-        
-        //api call
-        /*Alamofire.request("http://backendapplications.azurewebsites.net/api/Breaks")
-            .responseJSON{ (response) -> Void in
-                
-                if let JSON = response.result.value{
-                    print(JSON)
-                }
-        }*/
-        
-        
     }
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnInlog: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
+    
+    //Here we do an api call when the button is pressed to login
+    //If there is an error then you get a toast message.
+    //If the api call succeed then the token is set and you go to the overview view
     @IBAction func btnInlogPressed(_ sender: UIButton) {
         let headers = [
             "Accept": "application/json",

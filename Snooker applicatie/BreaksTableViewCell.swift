@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Here we have the labels from the breaktableviewcell
 class BreaksTableViewCell: UITableViewCell {
     
     //MARK: Properties
@@ -17,13 +18,10 @@ class BreaksTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }

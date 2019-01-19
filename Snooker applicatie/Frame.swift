@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-
+//This is a Model class for a Frame with his values
 class Frame: Mappable {
     
     //properties
@@ -21,6 +21,7 @@ class Frame: Mappable {
     var matchId: Int? = 0
     var breaks: [Breaks]?
     
+    //This is a map function to map the values from the api call
     func mapping(map: Map) {
         frameId <- map["MatchId"]
         durationMatch <- map["DurationFrame"]
