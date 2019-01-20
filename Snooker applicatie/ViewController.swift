@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 
+//I use alamofire for the api calls
+//SOURCE: https://github.com/Alamofire/Alamofire
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
