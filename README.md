@@ -11,4 +11,6 @@ De match die je hebt gespeeld kan je dan raadplegen via een tableview en als je 
 
 Je kan ook een tableview opvragen van de breaks die je hebt gemaakt.
 
+Je moet het .xcworkspace project opendoen en niet het .xcodeproj door de pod files die ik heb toegevoegd
+
 Gemaakt door Dennis Deroose
